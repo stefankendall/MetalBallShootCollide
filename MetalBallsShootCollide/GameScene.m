@@ -1,10 +1,12 @@
 #import "GameScene.h"
+#import "BallNode.h"
 
 @implementation GameScene
 
 - (void)didMoveToView:(SKView *)view {
     self.backgroundColor = [UIColor whiteColor];
     self.shootInterval = 0.2;
+    self.physicsWorld.gravity = CGVectorMake(0, 0);
 
     SKSpriteNode *shooter = [[SKSpriteNode alloc] initWithColor:[SKColor brownColor] size:CGSizeMake(30, 90)];
     shooter.position = CGPointMake(self.size.width / 2, 0);
@@ -40,19 +42,10 @@
     SKSpriteNode *shooter = (SKSpriteNode *) [self childNodeWithName:@"shooter"];
     if (self.lastTouchPoint && ([NSDate timeIntervalSinceReferenceDate] - self.lastShotTime) > self.shootInterval) {
         self.lastShotTime = [NSDate timeIntervalSinceReferenceDate];
-        int ballRadius = 8;
-        SKSpriteNode *ball = [[SKSpriteNode alloc] initWithColor:[SKColor blackColor] size:CGSizeMake(ballRadius, ballRadius)];
+        BallNode *ball = [BallNode node];
         ball.position = CGPointMake(shooter.position.x, shooter.position.y + shooter.size.height / 2);
-        ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:ballRadius];
-        int ballSpeed = 1000;
-        CGVector vectorToShooter = [self vectorToShooter:self.lastTouchPoint];
-        float angle = atan2(vectorToShooter.dy, vectorToShooter.dx);
-        ball.physicsBody.velocity = CGVectorMake(
-                cosf(angle) * ballSpeed,
-                sinf(angle) * ballSpeed
-        );
-        ball.physicsBody.affectedByGravity = NO;
         [self addChild:ball];
+        [ball shootAlongVector:[self vectorToShooter:self.lastTouchPoint]];
     }
 
 }
