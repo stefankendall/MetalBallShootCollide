@@ -1,5 +1,6 @@
 #import "GameScene.h"
 #import "BallNode.h"
+#import "TriangleTargetNode.h"
 
 @implementation GameScene
 
@@ -12,6 +13,11 @@
     shooter.position = CGPointMake(self.size.width / 2, 0);
     shooter.name = @"shooter";
     [self addChild:shooter];
+
+    TriangleTargetNode *triangleTarget = [TriangleTargetNode node];
+    triangleTarget.name = @"triangle";
+    triangleTarget.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+    [self addChild:triangleTarget];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

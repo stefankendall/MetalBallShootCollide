@@ -15,6 +15,7 @@
 		54590600CACC3ECFFD231713 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590C46E6024176FA0CA422 /* LaunchScreen.xib */; };
 		545909A4A56B7CED6AB02329 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909B77EEB2BFF0D5F7AA9 /* AppDelegate.m */; };
 		545909CE56F7C8365E7382B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900FF2046079DEC2A2638 /* main.m */; };
+		54590BFE6CFB24DB436B4704 /* TriangleTargetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590DE732EB3202CB5060F1 /* TriangleTargetNode.m */; };
 		54590F34A8B5BC7CF27656A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5459086CE021FBB9280019AC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		545905FAB3FD5EEF9CCD6BCF /* BallNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallNode.h; sourceTree = "<group>"; };
 		545906B99F6EE3ACF14C762A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5459074AA17E8C2570E5EBC5 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		54590759E272D240587343ED /* TriangleTargetNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleTargetNode.h; sourceTree = "<group>"; };
 		545907615617A06DBBB791C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		545907EB9F391968CDE5C642 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		5459094AAB55836FD7B152DD /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
@@ -45,6 +47,7 @@
 		54590B88914A599B0720055B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		54590D27DA64855650F0718C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		54590D424FB42B32DBE47398 /* MetalBallsShootCollideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetalBallsShootCollideTests.m; sourceTree = "<group>"; };
+		54590DE732EB3202CB5060F1 /* TriangleTargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleTargetNode.m; sourceTree = "<group>"; };
 		54590E5BF5B68330EB8CA817 /* BallNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +110,8 @@
 				545901CB18EA1A098E819E8D /* GameViewController.m */,
 				54590E5BF5B68330EB8CA817 /* BallNode.m */,
 				545905FAB3FD5EEF9CCD6BCF /* BallNode.h */,
+				54590DE732EB3202CB5060F1 /* TriangleTargetNode.m */,
+				54590759E272D240587343ED /* TriangleTargetNode.h */,
 			);
 			path = MetalBallsShootCollide;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				545901EF4625D2D1A35BB2BC /* GameScene.m in Sources */,
 				545902925B833D533C1F06E0 /* GameViewController.m in Sources */,
 				545904E7DB3E3402CAD96A25 /* BallNode.m in Sources */,
+				54590BFE6CFB24DB436B4704 /* TriangleTargetNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

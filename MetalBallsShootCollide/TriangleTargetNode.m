@@ -1,0 +1,20 @@
+#import "TriangleTargetNode.h"
+
+@implementation TriangleTargetNode
+
++ (instancetype)node {
+    SKNode *node = [super node];
+    SKSpriteNode *triangle = [SKSpriteNode spriteNodeWithImageNamed:@"triangle"];
+
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path, nil, -triangle.size.width/2, -triangle.size.height/2);
+    CGPathAddLineToPoint(path, nil, triangle.size.width/2, -triangle.size.height/2);
+    CGPathAddLineToPoint(path, nil, 0, triangle.size.height/2);
+    CGPathAddLineToPoint(path, nil, -triangle.size.width/2, -triangle.size.height/2);
+    triangle.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:path];
+    CGPathRelease(path);
+    [node addChild:triangle];
+    return (TriangleTargetNode *) node;
+}
+
+@end
