@@ -8,6 +8,7 @@
     int ballRadius = 8;
     SKSpriteNode *ball = [[SKSpriteNode alloc] initWithColor:[SKColor blackColor] size:CGSizeMake(ballRadius, ballRadius)];
     ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:ballRadius];
+    ball.physicsBody.mass = 1;
     ball.name = @"ball";
     [node addChild:ball];
 

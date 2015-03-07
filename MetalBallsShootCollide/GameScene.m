@@ -6,7 +6,7 @@
 
 - (void)didMoveToView:(SKView *)view {
     self.backgroundColor = [UIColor whiteColor];
-    self.shootInterval = 0.2;
+    self.shootInterval = 0.3;
     self.physicsWorld.gravity = CGVectorMake(0, 0);
 
     SKSpriteNode *shooter = [[SKSpriteNode alloc] initWithColor:[SKColor brownColor] size:CGSizeMake(30, 90)];
