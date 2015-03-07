@@ -1,6 +1,7 @@
 #import "GameScene.h"
 #import "BallNode.h"
 #import "TriangleTargetNode.h"
+#import "ShooterNode.h"
 
 @implementation GameScene
 
@@ -9,10 +10,10 @@
     self.shootInterval = 0.3;
     self.physicsWorld.gravity = CGVectorMake(0, 0);
 
-    SKSpriteNode *shooter = [[SKSpriteNode alloc] initWithColor:[SKColor brownColor] size:CGSizeMake(30, 90)];
-    shooter.position = CGPointMake(self.size.width / 2, 0);
-    shooter.name = @"shooter";
-    [self addChild:shooter];
+    SKNode *shooter1 = [ShooterNode shooter];
+    shooter1.position = CGPointMake(self.size.width / 2, 0);
+    shooter1.name = @"shooter1";
+    [self addChild:shooter1];
 
     TriangleTargetNode *triangleTarget = [TriangleTargetNode node];
     triangleTarget.name = @"triangle";
@@ -31,12 +32,12 @@
 - (void)shooterFollowTouch:(NSSet *)touches event:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     self.lastTouchPoint = touch;
-    SKSpriteNode *shooter = (SKSpriteNode *) [self childNodeWithName:@"shooter"];
+    ShooterNode *shooter = (ShooterNode *) [self childNodeWithName:@"shooter1"];
     CGVector vectorToShooter = [self vectorTo:shooter from:touch];
     shooter.zRotation = (CGFloat) (atan2(vectorToShooter.dy, vectorToShooter.dx) - M_PI_2);
 }
 
-- (CGVector)vectorTo:(SKSpriteNode *)node from:(UITouch *)touch {
+- (CGVector)vectorTo:(SKNode *)node from:(UITouch *)touch {
     CGPoint touchPoint = [touch locationInNode:self];
     CGFloat yDelta = touchPoint.y - node.position.y;
     CGFloat xDelta = touchPoint.x - node.position.x;
@@ -44,13 +45,12 @@
 }
 
 - (void)update:(CFTimeInterval)currentTime {
-    SKSpriteNode *shooter = (SKSpriteNode *) [self childNodeWithName:@"shooter"];
+    ShooterNode *shooter = (ShooterNode *) [self childNodeWithName:@"shooter1"];
     if (self.lastTouchPoint && ([NSDate timeIntervalSinceReferenceDate] - self.lastShotTime) > self.shootInterval) {
         self.lastShotTime = [NSDate timeIntervalSinceReferenceDate];
         BallNode *ball = [BallNode node];
-        ball.position = CGPointMake(shooter.position.x, shooter.position.y + shooter.size.height / 2);
         [self addChild:ball];
-        [ball shootAlongVector:[self vectorTo:shooter from:self.lastTouchPoint]];
+        [shooter shootBall: ball withVector: [self vectorTo:shooter from:self.lastTouchPoint]];
     }
 
 }
