@@ -1,10 +1,3 @@
-//
-//  GameViewController.m
-//  MetalBallsShootCollide
-//
-//  Created by Stefan Kendall on 3/6/15.
-//  Copyright (c) 2015 Usable Design LLC. All rights reserved.
-//
 
 #import "GameViewController.h"
 #import "GameScene.h"
@@ -12,9 +5,7 @@
 @implementation SKScene (Unarchive)
 
 + (instancetype)unarchiveFromFile:(NSString *)file {
-    /* Retrieve scene file path from the application bundle */
     NSString *nodePath = [[NSBundle mainBundle] pathForResource:file ofType:@"sks"];
-    /* Unarchive the file to an SKScene object */
     NSData *data = [NSData dataWithContentsOfFile:nodePath
                                           options:NSDataReadingMappedIfSafe
                                             error:nil];
@@ -34,39 +25,15 @@
 {
     [super viewDidLoad];
 
-    // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
-    /* Sprite Kit applies additional optimizations to improve rendering performance */
+//    skView.showsNodeCount = YES;
     skView.ignoresSiblingOrder = YES;
     
-    // Create and configure the scene.
-    GameScene *scene = [GameScene unarchiveFromFile:@"GameScene"];
+    GameScene *scene = [[GameScene alloc] initWithSize:self.view.frame.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
-    // Present the scene.
     [skView presentScene:scene];
-}
-
-- (BOOL)shouldAutorotate
-{
-    return YES;
-}
-
-- (NSUInteger)supportedInterfaceOrientations
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return UIInterfaceOrientationMaskAllButUpsideDown;
-    } else {
-        return UIInterfaceOrientationMaskAll;
-    }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
 }
 
 - (BOOL)prefersStatusBarHidden {

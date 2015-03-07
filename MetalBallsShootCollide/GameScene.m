@@ -1,49 +1,33 @@
-//
-//  GameScene.m
-//  MetalBallsShootCollide
-//
-//  Created by Stefan Kendall on 3/6/15.
-//  Copyright (c) 2015 Usable Design LLC. All rights reserved.
-//
-
 #import "GameScene.h"
 
 @implementation GameScene
 
--(void)didMoveToView:(SKView *)view {
-    /* Setup your scene here */
-    SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    
-    myLabel.text = @"Hello, World!";
-    myLabel.fontSize = 65;
-    myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                   CGRectGetMidY(self.frame));
-    
-    [self addChild:myLabel];
+- (void)didMoveToView:(SKView *)view {
+    self.backgroundColor = [UIColor whiteColor];
+    SKSpriteNode *shooter = [[SKSpriteNode alloc] initWithColor:[SKColor brownColor] size:CGSizeMake(30, 90)];
+    shooter.position = CGPointMake(self.size.width / 2, 0);
+    shooter.name = @"shooter";
+    [self addChild:shooter];
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    /* Called when a touch begins */
-    
-    for (UITouch *touch in touches) {
-        CGPoint location = [touch locationInNode:self];
-        
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.xScale = 0.5;
-        sprite.yScale = 0.5;
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
-    }
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self shooterFollowTouch: touches event: event];
 }
 
--(void)update:(CFTimeInterval)currentTime {
-    /* Called before each frame is rendered */
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self shooterFollowTouch: touches event: event];
+}
+
+- (void)shooterFollowTouch:(NSSet *)touches event:(UIEvent *)event {
+    SKSpriteNode *shooter = (SKSpriteNode *) [self childNodeWithName:@"shooter"];
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPoint = [touch locationInNode:self];
+    CGFloat yDelta = touchPoint.y - shooter.position.y;
+    CGFloat xDelta = touchPoint.x - shooter.position.x;
+    shooter.zRotation = (CGFloat) (atan2(yDelta, xDelta) - M_PI_2);
+}
+
+- (void)update:(CFTimeInterval)currentTime {
 }
 
 @end

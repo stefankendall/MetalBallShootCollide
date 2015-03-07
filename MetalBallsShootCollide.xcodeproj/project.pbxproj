@@ -12,7 +12,6 @@
 		545902925B833D533C1F06E0 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901CB18EA1A098E819E8D /* GameViewController.m */; };
 		545902C5CF008E57298B40D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54590D27DA64855650F0718C /* Images.xcassets */; };
 		54590600CACC3ECFFD231713 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590C46E6024176FA0CA422 /* LaunchScreen.xib */; };
-		5459075298B232112910E334 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5459044BDBD30D38093900DA /* GameScene.sks */; };
 		545909A4A56B7CED6AB02329 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909B77EEB2BFF0D5F7AA9 /* AppDelegate.m */; };
 		545909CE56F7C8365E7382B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900FF2046079DEC2A2638 /* main.m */; };
 		54590F34A8B5BC7CF27656A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5459086CE021FBB9280019AC /* Main.storyboard */; };
@@ -33,7 +32,6 @@
 		545900FF2046079DEC2A2638 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		545901CB18EA1A098E819E8D /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		5459036A68F655B93CE50A57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		5459044BDBD30D38093900DA /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		5459052A126DCBAA603B4368 /* MetalBallsShootCollide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBallsShootCollide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545906B99F6EE3ACF14C762A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5459074AA17E8C2570E5EBC5 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				5459086CE021FBB9280019AC /* Main.storyboard */,
 				5459094AAB55836FD7B152DD /* GameScene.h */,
 				545907EB9F391968CDE5C642 /* GameScene.m */,
-				5459044BDBD30D38093900DA /* GameScene.sks */,
 				5459074AA17E8C2570E5EBC5 /* GameViewController.h */,
 				545901CB18EA1A098E819E8D /* GameViewController.m */,
 			);
@@ -199,7 +196,6 @@
 				545902C5CF008E57298B40D9 /* Images.xcassets in Resources */,
 				54590600CACC3ECFFD231713 /* LaunchScreen.xib in Resources */,
 				54590F34A8B5BC7CF27656A3 /* Main.storyboard in Resources */,
-				5459075298B232112910E334 /* GameScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +263,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MetalBallsShootCollide/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -383,6 +380,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MetalBallsShootCollide/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -398,6 +396,7 @@
 				545902DAC8FFF7CD8486F6D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		545902FA86078AB4CB698541 /* Build configuration list for PBXProject "MetalBallsShootCollide" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +414,7 @@
 				54590D9D2BBC5A757A10A9C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
