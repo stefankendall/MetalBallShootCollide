@@ -12,7 +12,7 @@
     CGPathAddLineToPoint(path, nil, 0, triangle.size.height/2);
     CGPathAddLineToPoint(path, nil, -triangle.size.width/2, -triangle.size.height/2);
     triangle.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:path];
-    triangle.physicsBody.mass = 9;
+    triangle.physicsBody.mass = 10;
     CGPathRelease(path);
     [node addChild:triangle];
     return (TriangleTargetNode *) node;
