@@ -31,16 +31,15 @@
 - (void)shooterFollowTouch:(NSSet *)touches event:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     self.lastTouchPoint = touch;
-    CGVector vectorToShooter = [self vectorToShooter:touch];
     SKSpriteNode *shooter = (SKSpriteNode *) [self childNodeWithName:@"shooter"];
+    CGVector vectorToShooter = [self vectorTo:shooter from:touch];
     shooter.zRotation = (CGFloat) (atan2(vectorToShooter.dy, vectorToShooter.dx) - M_PI_2);
 }
 
-- (CGVector)vectorToShooter:(UITouch *)touch {
-    SKSpriteNode *shooter = (SKSpriteNode *) [self childNodeWithName:@"shooter"];
+- (CGVector)vectorTo:(SKSpriteNode *)node from:(UITouch *)touch {
     CGPoint touchPoint = [touch locationInNode:self];
-    CGFloat yDelta = touchPoint.y - shooter.position.y;
-    CGFloat xDelta = touchPoint.x - shooter.position.x;
+    CGFloat yDelta = touchPoint.y - node.position.y;
+    CGFloat xDelta = touchPoint.x - node.position.x;
     return CGVectorMake(xDelta, yDelta);
 }
 
@@ -51,7 +50,7 @@
         BallNode *ball = [BallNode node];
         ball.position = CGPointMake(shooter.position.x, shooter.position.y + shooter.size.height / 2);
         [self addChild:ball];
-        [ball shootAlongVector:[self vectorToShooter:self.lastTouchPoint]];
+        [ball shootAlongVector:[self vectorTo:shooter from:self.lastTouchPoint]];
     }
 
 }
