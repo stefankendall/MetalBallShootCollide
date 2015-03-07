@@ -21,6 +21,8 @@
     TriangleTargetNode *triangleTarget = [TriangleTargetNode node];
     triangleTarget.name = @"triangle";
     triangleTarget.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+    triangleTarget.physicsBody.angularVelocity = 3;
+    [triangleTarget.physicsBody setVelocity:CGVectorMake(-23, 0)];
     [self addChild:triangleTarget];
 }
 
