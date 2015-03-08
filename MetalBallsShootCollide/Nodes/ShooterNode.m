@@ -12,11 +12,11 @@
     [ball shootAlongVector:vector];
 }
 
-+ (SKNode *)shooterIn:(GameScene *)scene position:(enum Position)position {
++ (SKNode *)shooterIn:(SKNode *)parent position:(enum Position)position {
     ShooterNode *node = [self node];
     node.positionInScene = position;
-    node.position = CGPointMake(scene.size.width / 2, position == BOTTOM ? 0 : scene.size.height);
-    SKSpriteNode *image = [[SKSpriteNode alloc] initWithColor:[SKColor brownColor] size:CGSizeMake(30, 90)];
+    node.position = CGPointMake(parent.frame.size.width / 2, position == BOTTOM ? 0 : parent.frame.size.height);
+    SKSpriteNode *image = [[SKSpriteNode alloc] initWithColor:[SKColor blackColor] size:CGSizeMake(30, 90)];
     image.name = @"image";
     [node addChild:image];
     return node;

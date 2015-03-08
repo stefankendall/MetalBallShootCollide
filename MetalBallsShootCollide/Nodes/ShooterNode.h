@@ -16,5 +16,5 @@ typedef NS_ENUM(NSUInteger, Position) {
 
 - (void)shootBall:(BallNode *)node withVector:(CGVector)vector;
 
-+ (SKNode *)shooterIn:(GameScene *)scene position:(enum Position)position;
++ (SKNode *)shooterIn:(SKNode *)parent position:(enum Position)position;
 @end
