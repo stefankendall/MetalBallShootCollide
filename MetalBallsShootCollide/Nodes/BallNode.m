@@ -23,6 +23,10 @@
             cosf(angle) * ballSpeed,
             sinf(angle) * ballSpeed
     );
+
+    SKAction *wait = [SKAction waitForDuration:5];
+    SKAction *remove = [SKAction removeFromParent];
+    [self runAction:[SKAction sequence:@[wait, remove]]];
 }
 
 @end
