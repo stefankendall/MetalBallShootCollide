@@ -1,6 +1,5 @@
 #import "ShooterNode.h"
 #import "BallNode.h"
-#import "GameScene.h"
 
 @implementation ShooterNode
 
@@ -12,7 +11,7 @@
     [ball shootAlongVector:vector];
 }
 
-+ (SKNode *)shooterIn:(SKNode *)parent position:(enum Position)position {
++ (SKNode *)shooterIn:(SKNode *)parent position:(Position)position {
     ShooterNode *node = [self node];
     node.positionInScene = position;
     node.position = CGPointMake(parent.frame.size.width / 2, position == BOTTOM ? 0 : parent.frame.size.height);

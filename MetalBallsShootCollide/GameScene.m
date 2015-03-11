@@ -42,7 +42,7 @@
 - (void)shooterFollowTouch:(NSSet *)touches event:(UIEvent *)event {
     BOOL shooter1Shooting = NO;
     BOOL shooter2Shooting = NO;
-    for( UITouch *touch in touches ){
+    for (UITouch *touch in touches) {
         CGPoint point = [touch locationInNode:self];
         ShooterNode *shooter;
 
@@ -61,10 +61,10 @@
         shooter.zRotation = (CGFloat) (atan2(vectorToShooter.dy, vectorToShooter.dx) - M_PI_2);
     }
 
-    if(!shooter1Shooting){
+    if (!shooter1Shooting) {
         self.lastTouchPointShooter1 = nil;
     }
-    if(!shooter2Shooting){
+    if (!shooter2Shooting) {
         self.lastTouchPointShooter2 = nil;
     }
 }
@@ -83,14 +83,14 @@
 
     if (self.lastTouchPointShooter1 && ([NSDate timeIntervalSinceReferenceDate] - self.lastShotTimeShooter1) > self.shootInterval) {
         self.lastShotTimeShooter1 = [NSDate timeIntervalSinceReferenceDate];
-        BallNode *ball = [BallNode node];
+        BallNode *ball = [BallNode ballFromPosition:BOTTOM];
         [level addChild:ball];
         [shooter1 shootBall:ball withVector:[self vectorTo:shooter1 from:self.lastTouchPointShooter1]];
     }
 
     if (self.lastTouchPointShooter2 && ([NSDate timeIntervalSinceReferenceDate] - self.lastShotTimeShooter2) > self.shootInterval) {
         self.lastShotTimeShooter2 = [NSDate timeIntervalSinceReferenceDate];
-        BallNode *ball = [BallNode node];
+        BallNode *ball = [BallNode ballFromPosition:TOP];
         [level addChild:ball];
         [shooter2 shootBall:ball withVector:[self vectorTo:shooter2 from:self.lastTouchPointShooter2]];
     }

@@ -29,7 +29,7 @@
     skView.showsFPS = YES;
 //    skView.showsNodeCount = YES;
     skView.ignoresSiblingOrder = YES;
-    skView.showsPhysics = YES;
+//    skView.showsPhysics = YES;
     
     GameScene *scene = [[GameScene alloc] initWithSize:self.view.frame.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;

@@ -1,31 +1,52 @@
 #import "BallNode.h"
+#import "SKEmitterNode+HelperExtensions.h"
 
 @implementation BallNode
 
-+ (instancetype)node {
-    SKNode *node = [super node];
++ (instancetype)ballFromPosition:(Position)position {
+    BallNode *node = [self node];
 
+    node.positionInScene = position;
     int ballRadius = 8;
-    SKSpriteNode *ball = [[SKSpriteNode alloc] initWithColor:[SKColor blackColor] size:CGSizeMake(ballRadius, ballRadius)];
-    ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:ballRadius];
-    ball.physicsBody.mass = 1;
+    SKSpriteNode *ball = [SKSpriteNode spriteNodeWithImageNamed:[self imageNameForPosition:position]];
     ball.name = @"ball";
     [node addChild:ball];
+    node.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:ballRadius];
+    node.physicsBody.mass = 1;
+    node.physicsBody.angularDamping = 1000;
 
     return (BallNode *) node;
 }
 
++ (NSString *)imageNameForPosition:(Position)position {
+    return position == BOTTOM ? @"p1Ball" : @"p2ball";
+}
+
++ (SKEmitterNode *)ballFade {
+    static SKEmitterNode *emitterNode = nil;
+    if (emitterNode == nil) {
+        emitterNode = [SKEmitterNode rcw_nodeWithFile:@"ballfade"];
+    }
+    return emitterNode;
+}
+
 - (void)shootAlongVector:(CGVector)vector {
-    SKNode *ball = [self childNodeWithName:@"ball"];
     int ballSpeed = 1000;
     float angle = (float) atan2(vector.dy, vector.dx);
-    ball.physicsBody.velocity = CGVectorMake(
+    self.physicsBody.velocity = CGVectorMake(
             cosf(angle) * ballSpeed,
             sinf(angle) * ballSpeed
     );
 
-    SKAction *wait = [SKAction waitForDuration:5];
+    SKAction *waitForFade = [SKAction waitForDuration:2.2];
+    SKAction *doFade = [SKAction fadeAlphaTo:0 duration:0.5];
+
+    SKSpriteNode *ball = (SKSpriteNode *) [self childNodeWithName:@"ball"];
+    [ball runAction:[SKAction sequence:@[waitForFade, doFade]]];
+
+    SKAction *wait = [SKAction waitForDuration:3];
     SKAction *remove = [SKAction removeFromParent];
+
     [self runAction:[SKAction sequence:@[wait, remove]]];
 }
 
