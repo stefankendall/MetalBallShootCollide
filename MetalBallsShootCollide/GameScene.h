@@ -1,6 +1,6 @@
 #import <SpriteKit/SpriteKit.h>
 
-@interface GameScene : SKScene
+@interface GameScene : SKScene <SKPhysicsContactDelegate>
 
 @property(nonatomic) CFTimeInterval lastShotTimeShooter1;
 @property(nonatomic) CFTimeInterval lastShotTimeShooter2;

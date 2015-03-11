@@ -1,4 +1,5 @@
 #import "TriangleTargetNode.h"
+#import "ContactCategoryMask.h"
 
 @implementation TriangleTargetNode
 
@@ -14,6 +15,8 @@
     CGPathAddLineToPoint(path, nil, -triangle.size.width/2, -triangle.size.height/2);
     node.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:path];
     node.physicsBody.mass = 10;
+    node.physicsBody.categoryBitMask = CategoryTarget;
+    node.physicsBody.collisionBitMask = CategoryWall;
     CGPathRelease(path);
     return (TriangleTargetNode *) node;
 }

@@ -22,6 +22,7 @@
 		54590920CBFA05A2969A41AC /* p1ball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545909C6235944D3B1D9C380 /* p1ball@2x.png */; };
 		545909A4A56B7CED6AB02329 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909B77EEB2BFF0D5F7AA9 /* AppDelegate.m */; };
 		545909CE56F7C8365E7382B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900FF2046079DEC2A2638 /* main.m */; };
+		54590E3B540C7F86D0DA34BF /* ContactCategoryMask.h in Resources */ = {isa = PBXBuildFile; fileRef = 54590B96FD61137335B7EB44 /* ContactCategoryMask.h */; };
 		54590E6FD2E3845E6662C950 /* p2ball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545904702C600889242FBD11 /* p2ball@2x.png */; };
 		54590F34A8B5BC7CF27656A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5459086CE021FBB9280019AC /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		545909FD2A38C83F8185F385 /* MetalBallsShootCollideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalBallsShootCollideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54590B2965ABEE3A0CE4AD93 /* LevelBackgroundNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelBackgroundNode.m; sourceTree = "<group>"; };
 		54590B88914A599B0720055B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		54590B96FD61137335B7EB44 /* ContactCategoryMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCategoryMask.h; sourceTree = "<group>"; };
 		54590BF90A942B92F30D4BE8 /* TriangleTargetNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleTargetNode.h; sourceTree = "<group>"; };
 		54590CD07D35FFB217397F0C /* LevelBackgroundNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelBackgroundNode.h; sourceTree = "<group>"; };
 		54590CF692AF5D8B87524D82 /* SKEmitterNode+HelperExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+HelperExtensions.m"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				54590C1627689992651C3152 /* icons.atlas */,
 				54590CF692AF5D8B87524D82 /* SKEmitterNode+HelperExtensions.m */,
 				54590047F9F179A2A91CADA7 /* SKEmitterNode+HelperExtensions.h */,
+				54590B96FD61137335B7EB44 /* ContactCategoryMask.h */,
 			);
 			path = MetalBallsShootCollide;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				0254ADC01AB0D45D008336DA /* ballfade.sks in Resources */,
 				54590E6FD2E3845E6662C950 /* p2ball@2x.png in Resources */,
 				54590920CBFA05A2969A41AC /* p1ball@2x.png in Resources */,
+				54590E3B540C7F86D0DA34BF /* ContactCategoryMask.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

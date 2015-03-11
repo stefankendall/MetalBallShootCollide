@@ -1,8 +1,8 @@
 #import "GameScene.h"
 #import "BallNode.h"
 #import "TriangleTargetNode.h"
-#import "ShooterNode.h"
 #import "LevelBackgroundNode.h"
+#import "ContactCategoryMask.h"
 
 @implementation GameScene
 
@@ -10,6 +10,7 @@
     self.backgroundColor = [UIColor whiteColor];
     self.shootInterval = 0.3;
     self.physicsWorld.gravity = CGVectorMake(0, 0);
+    self.physicsWorld.contactDelegate = self;
 
     SKNode *level = [LevelBackgroundNode levelForScene:self];
     level.name = @"level";
@@ -93,6 +94,13 @@
         BallNode *ball = [BallNode ballFromPosition:TOP];
         [level addChild:ball];
         [shooter2 shootBall:ball withVector:[self vectorTo:shooter2 from:self.lastTouchPointShooter2]];
+    }
+}
+
+- (void)didBeginContact:(SKPhysicsContact *)contact {
+    NSLog(@"Contact");
+    if (contact.bodyA.categoryBitMask == CategoryTarget) {
+        NSLog(@"Category target!");
     }
 }
 
