@@ -1,10 +1,11 @@
 #import "BallNode.h"
-#import "SKEmitterNode+HelperExtensions.h"
+#import "ContactCategoryMask.h"
 
 @implementation BallNode
 
 + (instancetype)ballFromPosition:(Position)position {
     BallNode *node = [self node];
+    node.physicsBody.categoryBitMask = CategoryBall;
 
     node.positionInScene = position;
     int ballRadius = 8;
@@ -15,7 +16,7 @@
     node.physicsBody.mass = 1;
     node.physicsBody.angularDamping = 1000;
 
-    return (BallNode *) node;
+    return node;
 }
 
 + (NSString *)imageNameForPosition:(Position)position {

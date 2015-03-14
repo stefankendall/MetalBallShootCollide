@@ -98,11 +98,9 @@
 }
 
 - (void)didBeginContact:(SKPhysicsContact *)contact {
-
-    if (contact.bodyA.categoryBitMask & CategoryWall && contact.bodyB.categoryBitMask & CategoryTarget) {
+    if (contact.bodyA.categoryBitMask == CategoryWall && contact.bodyB.categoryBitMask == CategoryTarget) {
         SKPhysicsBody *target = contact.bodyB;
-        NSLog(@"Applying force");
-        [target applyImpulse:CGVectorMake(1000 * contact.contactNormal.dx, 0)];
+        [target applyImpulse:CGVectorMake(2000 * contact.contactNormal.dx, 0)];
     }
 }
 

@@ -14,7 +14,7 @@
     CGPathAddLineToPoint(path, nil, 0, triangle.size.height/2);
     CGPathAddLineToPoint(path, nil, -triangle.size.width/2, -triangle.size.height/2);
     node.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:path];
-    node.physicsBody.mass = 10;
+    node.physicsBody.mass = 8;
     node.physicsBody.categoryBitMask = CategoryTarget;
     node.physicsBody.collisionBitMask = CategoryWall;
     CGPathRelease(path);
