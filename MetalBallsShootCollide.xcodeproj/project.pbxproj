@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0254ADC01AB0D45D008336DA /* ballfade.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0254ADBE1AB0D45D008336DA /* ballfade.sks */; };
 		0254ADC11AB0D45D008336DA /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0254ADBF1AB0D45D008336DA /* spark.png */; };
 		54590072E76D7813173F1A19 /* MetalBallsShootCollideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D424FB42B32DBE47398 /* MetalBallsShootCollideTests.m */; };
 		545901EF4625D2D1A35BB2BC /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907EB9F391968CDE5C642 /* GameScene.m */; };
@@ -38,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0254ADBE1AB0D45D008336DA /* ballfade.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = ballfade.sks; path = ../../ballfade.sks; sourceTree = "<group>"; };
 		0254ADBF1AB0D45D008336DA /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		5459002BB5A5230D20F08BF0 /* ShooterNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShooterNode.m; sourceTree = "<group>"; };
 		54590039BBD6C3BBD379CF6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 		54590B006ADE0D3EC49FDF51 /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
-				0254ADBE1AB0D45D008336DA /* ballfade.sks */,
 				545906AA55E0FB92D7514C65 /* BallNode.m */,
 				545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */,
 				54590F9CC91E6A68BC80BD31 /* ShooterNode.h */,
@@ -258,7 +255,6 @@
 				545902C5CF008E57298B40D9 /* Images.xcassets in Resources */,
 				54590600CACC3ECFFD231713 /* LaunchScreen.xib in Resources */,
 				54590F34A8B5BC7CF27656A3 /* Main.storyboard in Resources */,
-				0254ADC01AB0D45D008336DA /* ballfade.sks in Resources */,
 				54590E6FD2E3845E6662C950 /* p2ball@2x.png in Resources */,
 				54590920CBFA05A2969A41AC /* p1ball@2x.png in Resources */,
 				54590E3B540C7F86D0DA34BF /* ContactCategoryMask.h in Resources */,

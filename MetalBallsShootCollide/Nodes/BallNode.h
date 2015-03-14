@@ -10,6 +10,4 @@
 
 - (void)shootAlongVector:(CGVector)vector;
 
-+ (SKEmitterNode *)ballFade;
-
 @end

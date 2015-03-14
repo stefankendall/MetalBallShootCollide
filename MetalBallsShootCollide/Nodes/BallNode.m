@@ -22,14 +22,6 @@
     return position == BOTTOM ? @"p1Ball" : @"p2ball";
 }
 
-+ (SKEmitterNode *)ballFade {
-    static SKEmitterNode *emitterNode = nil;
-    if (emitterNode == nil) {
-        emitterNode = [SKEmitterNode rcw_nodeWithFile:@"ballfade"];
-    }
-    return emitterNode;
-}
-
 - (void)shootAlongVector:(CGVector)vector {
     int ballSpeed = 1000;
     float angle = (float) atan2(vector.dy, vector.dx);
