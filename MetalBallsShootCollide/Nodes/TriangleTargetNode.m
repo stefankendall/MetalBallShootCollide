@@ -22,4 +22,8 @@
     return (TriangleTargetNode *) node;
 }
 
+- (void) explode {
+
+}
+
 @end
