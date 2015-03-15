@@ -3,4 +3,5 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface TriangleTargetNode : SKNode
+- (void)explode;
 @end

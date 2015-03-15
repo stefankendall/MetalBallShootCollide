@@ -41,6 +41,7 @@
     triangleTarget.physicsBody.angularVelocity = 3;
     [triangleTarget.physicsBody setVelocity:CGVectorMake(-23, 0)];
     [level addChild:triangleTarget];
+    [triangleTarget explode];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

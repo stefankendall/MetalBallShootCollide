@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		024E08D51AB63AD60001B913 /* explode.sks in Resources */ = {isa = PBXBuildFile; fileRef = 024E08D31AB63AD60001B913 /* explode.sks */; };
+		024E08D51AB63AD60001B913 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 024E08D31AB63AD60001B913 /* explosion.sks */; };
 		024E08D61AB63AD60001B913 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 024E08D41AB63AD60001B913 /* spark.png */; };
 		54590072E76D7813173F1A19 /* MetalBallsShootCollideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D424FB42B32DBE47398 /* MetalBallsShootCollideTests.m */; };
 		545901EF4625D2D1A35BB2BC /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907EB9F391968CDE5C642 /* GameScene.m */; };
@@ -39,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		024E08D31AB63AD60001B913 /* explode.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explode.sks; sourceTree = "<group>"; };
+		024E08D31AB63AD60001B913 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
 		024E08D41AB63AD60001B913 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		5459002BB5A5230D20F08BF0 /* ShooterNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShooterNode.m; sourceTree = "<group>"; };
 		54590039BBD6C3BBD379CF6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 				54590B2965ABEE3A0CE4AD93 /* LevelBackgroundNode.m */,
 				54590AB43C6BA5EC1A569C9E /* CountdownNode.m */,
 				54590EA2B75E46E86984D746 /* CountdownNode.h */,
-				024E08D31AB63AD60001B913 /* explode.sks */,
+				024E08D31AB63AD60001B913 /* explosion.sks */,
 				024E08D41AB63AD60001B913 /* spark.png */,
 			);
 			path = Nodes;
@@ -259,7 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				024E08D51AB63AD60001B913 /* explode.sks in Resources */,
+				024E08D51AB63AD60001B913 /* explosion.sks in Resources */,
 				545902C5CF008E57298B40D9 /* Images.xcassets in Resources */,
 				54590600CACC3ECFFD231713 /* LaunchScreen.xib in Resources */,
 				54590F34A8B5BC7CF27656A3 /* Main.storyboard in Resources */,
