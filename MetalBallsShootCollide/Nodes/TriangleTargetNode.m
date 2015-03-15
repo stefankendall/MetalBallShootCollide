@@ -17,6 +17,7 @@
     node.physicsBody.mass = 8;
     node.physicsBody.categoryBitMask = CategoryTarget;
     node.physicsBody.collisionBitMask = CategoryWall;
+    node.physicsBody.angularDamping = 0.07;
     CGPathRelease(path);
     return (TriangleTargetNode *) node;
 }

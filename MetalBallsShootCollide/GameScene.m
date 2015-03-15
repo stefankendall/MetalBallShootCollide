@@ -3,6 +3,7 @@
 #import "TriangleTargetNode.h"
 #import "LevelBackgroundNode.h"
 #import "ContactCategoryMask.h"
+#import "CountdownNode.h"
 
 @implementation GameScene
 
@@ -24,6 +25,16 @@
     shooter2.name = @"shooter2";
     [level addChild:shooter2];
 
+    CountdownNode *countdownNode = (CountdownNode *) [CountdownNode countdownNode];
+    countdownNode.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+    [countdownNode countToZero:^{
+        [self addTarget];
+    }];
+    [level addChild:countdownNode];
+}
+
+- (void)addTarget {
+    SKNode *level = [self childNodeWithName:@"level"];
     TriangleTargetNode *triangleTarget = [TriangleTargetNode node];
     triangleTarget.name = @"triangle";
     triangleTarget.position = CGPointMake(self.size.width / 2, self.size.height / 2);
@@ -100,7 +111,7 @@
 - (void)didBeginContact:(SKPhysicsContact *)contact {
     if (contact.bodyA.categoryBitMask == CategoryWall && contact.bodyB.categoryBitMask == CategoryTarget) {
         SKPhysicsBody *target = contact.bodyB;
-        [target applyImpulse:CGVectorMake(2000 * contact.contactNormal.dx, 0)];
+        [target applyImpulse:CGVectorMake(1500 * contact.contactNormal.dx, 0)];
     }
 }
 
