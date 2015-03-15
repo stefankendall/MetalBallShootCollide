@@ -33,8 +33,9 @@
     SKAction *fade = [SKAction fadeAlphaTo:0 duration:3];
     SKAction *remove = [SKAction removeFromParent];
     SKAction *fadeAndRemove = [SKAction sequence:@[fade, remove]];
+    SKAction *sound = [SKAction playSoundFileNamed:@"short_explosion.mp3" waitForCompletion:NO];
 
-    [self runAction:fadeAndRemove];
+    [self runAction:[SKAction group:@[fadeAndRemove, sound]]];
 }
 
 @end
