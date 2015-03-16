@@ -13,6 +13,8 @@
     self.physicsWorld.gravity = CGVectorMake(0, 0);
     self.physicsWorld.contactDelegate = self;
 
+    self.targetExplodeHeightFromEdge = 60;
+
     SKNode *level = [LevelBackgroundNode levelForScene:self];
     level.name = @"level";
     [self addChild:level];
@@ -36,12 +38,11 @@
 - (void)addTarget {
     SKNode *level = [self childNodeWithName:@"level"];
     TriangleTargetNode *triangleTarget = [TriangleTargetNode node];
-    triangleTarget.name = @"triangle";
+    triangleTarget.name = @"target";
     triangleTarget.position = CGPointMake(self.size.width / 2, self.size.height / 2);
     triangleTarget.physicsBody.angularVelocity = 3;
     [triangleTarget.physicsBody setVelocity:CGVectorMake(-23, 0)];
     [level addChild:triangleTarget];
-    [triangleTarget explode];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -106,6 +107,17 @@
         BallNode *ball = [BallNode ballFromPosition:TOP];
         [level addChild:ball];
         [shooter2 shootBall:ball withVector:[self vectorTo:shooter2 from:self.lastTouchPointShooter2]];
+    }
+
+    TriangleTargetNode *triangle = (TriangleTargetNode *) [self childNodeWithName:@"//target"];
+    if (triangle != nil) {
+        if (triangle.position.y < self.targetExplodeHeightFromEdge ||
+                triangle.position.y > self.size.height - self.targetExplodeHeightFromEdge
+                ) {
+            if (!triangle.exploding) {
+                [triangle explode];
+            }
+        }
     }
 }
 

@@ -9,4 +9,5 @@
 @property(nonatomic, weak) UITouch *lastTouchPointShooter1;
 
 @property(nonatomic) CFTimeInterval shootInterval;
+@property(nonatomic) int targetExplodeHeightFromEdge;
 @end

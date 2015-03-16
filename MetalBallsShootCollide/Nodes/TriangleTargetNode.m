@@ -24,13 +24,18 @@
 }
 
 - (void)explode {
+    self.exploding = YES;
     self.physicsBody.angularVelocity = 0;
+    self.physicsBody.velocity = CGVectorMake(
+            (CGFloat) (self.physicsBody.velocity.dx * 0.05),
+            (CGFloat) (self.physicsBody.velocity.dy * 0.05)
+    );
     SKEmitterNode *explosion = [SKEmitterNode rcw_nodeWithFile:@"explosion.sks"];
     explosion.position = CGPointMake(0, 0);
     explosion.zPosition = 1;
     [self addChild:explosion];
 
-    SKAction *fade = [SKAction fadeAlphaTo:0 duration:3];
+    SKAction *fade = [SKAction fadeAlphaTo:0 duration:1];
     SKAction *remove = [SKAction removeFromParent];
     SKAction *fadeAndRemove = [SKAction sequence:@[fade, remove]];
     SKAction *sound = [SKAction playSoundFileNamed:@"short_explosion.mp3" waitForCompletion:NO];
