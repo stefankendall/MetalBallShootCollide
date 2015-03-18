@@ -9,6 +9,7 @@
     CGFloat offsetToShootFrom = self.positionInScene == BOTTOM ? image.size.height / 2 : -image.size.height / 2;
     ball.position = CGPointMake(self.position.x, self.position.y + offsetToShootFrom);
     [ball shootAlongVector:vector];
+    [self runAction:[SKAction playSoundFileNamed:@"shoot.wav" waitForCompletion:NO]];
 }
 
 + (SKNode *)shooterIn:(SKNode *)parent position:(Position)position {

@@ -9,7 +9,7 @@
 
 - (void)didMoveToView:(SKView *)view {
     self.backgroundColor = [UIColor whiteColor];
-    self.shootInterval = 0.3;
+    self.shootInterval = 0.15;
     self.physicsWorld.gravity = CGVectorMake(0, 0);
     self.physicsWorld.contactDelegate = self;
 
@@ -47,6 +47,33 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self shooterFollowTouch:touches event:event];
+    LevelBackgroundNode *level = (LevelBackgroundNode *) [self childNodeWithName:@"level"];
+    for (UITouch *touch in touches) {
+        CGPoint point = [touch locationInNode:self];
+        ShooterNode *shooter;
+
+        if (point.y < self.size.height / 2) {
+            if (([NSDate timeIntervalSinceReferenceDate] - self.lastShotTimeShooter1) > self.shootInterval) {
+                shooter = (ShooterNode *) [self childNodeWithName:@"//shooter1"];
+                self.lastShotTimeShooter1 = [NSDate timeIntervalSinceReferenceDate];
+                BallNode *ball = [BallNode ballFromPosition:BOTTOM];
+                [level addChild:ball];
+                [shooter shootBall:ball withVector:[self vectorTo:shooter from:touch]];
+            }
+        }
+        else {
+            shooter = (ShooterNode *) [self childNodeWithName:@"//shooter2"];
+            if (([NSDate timeIntervalSinceReferenceDate] - self.lastShotTimeShooter2) > self.shootInterval) {
+                self.lastShotTimeShooter2 = [NSDate timeIntervalSinceReferenceDate];
+                BallNode *ball = [BallNode ballFromPosition:TOP];
+                [level addChild:ball];
+                [shooter shootBall:ball withVector:[self vectorTo:shooter from:touch]];
+            }
+        }
+
+        CGVector vectorToShooter = [self vectorTo:shooter from:touch];
+        shooter.zRotation = (CGFloat) (atan2(vectorToShooter.dy, vectorToShooter.dx) - M_PI_2);
+    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -54,32 +81,19 @@
 }
 
 - (void)shooterFollowTouch:(NSSet *)touches event:(UIEvent *)event {
-    BOOL shooter1Shooting = NO;
-    BOOL shooter2Shooting = NO;
     for (UITouch *touch in touches) {
         CGPoint point = [touch locationInNode:self];
         ShooterNode *shooter;
 
         if (point.y < self.size.height / 2) {
-            self.lastTouchPointShooter1 = touch;
             shooter = (ShooterNode *) [self childNodeWithName:@"//shooter1"];
-            shooter1Shooting = YES;
         }
         else {
-            self.lastTouchPointShooter2 = touch;
             shooter = (ShooterNode *) [self childNodeWithName:@"//shooter2"];
-            shooter2Shooting = YES;
         }
 
         CGVector vectorToShooter = [self vectorTo:shooter from:touch];
         shooter.zRotation = (CGFloat) (atan2(vectorToShooter.dy, vectorToShooter.dx) - M_PI_2);
-    }
-
-    if (!shooter1Shooting) {
-        self.lastTouchPointShooter1 = nil;
-    }
-    if (!shooter2Shooting) {
-        self.lastTouchPointShooter2 = nil;
     }
 }
 
@@ -91,24 +105,6 @@
 }
 
 - (void)update:(CFTimeInterval)currentTime {
-    LevelBackgroundNode *level = (LevelBackgroundNode *) [self childNodeWithName:@"level"];
-    ShooterNode *shooter1 = (ShooterNode *) [self childNodeWithName:@"//shooter1"];
-    ShooterNode *shooter2 = (ShooterNode *) [self childNodeWithName:@"//shooter2"];
-
-    if (self.lastTouchPointShooter1 && ([NSDate timeIntervalSinceReferenceDate] - self.lastShotTimeShooter1) > self.shootInterval) {
-        self.lastShotTimeShooter1 = [NSDate timeIntervalSinceReferenceDate];
-        BallNode *ball = [BallNode ballFromPosition:BOTTOM];
-        [level addChild:ball];
-        [shooter1 shootBall:ball withVector:[self vectorTo:shooter1 from:self.lastTouchPointShooter1]];
-    }
-
-    if (self.lastTouchPointShooter2 && ([NSDate timeIntervalSinceReferenceDate] - self.lastShotTimeShooter2) > self.shootInterval) {
-        self.lastShotTimeShooter2 = [NSDate timeIntervalSinceReferenceDate];
-        BallNode *ball = [BallNode ballFromPosition:TOP];
-        [level addChild:ball];
-        [shooter2 shootBall:ball withVector:[self vectorTo:shooter2 from:self.lastTouchPointShooter2]];
-    }
-
     TriangleTargetNode *triangle = (TriangleTargetNode *) [self childNodeWithName:@"//target"];
     if (triangle != nil) {
         if (triangle.position.y < self.targetExplodeHeightFromEdge ||
