@@ -30,16 +30,16 @@
     CountdownNode *countdownNode = (CountdownNode *) [CountdownNode countdownNode];
     countdownNode.position = CGPointMake(self.size.width / 2, self.size.height / 2);
     [countdownNode countToZero:^{
-        [self addTarget];
+        [self addTargetAtPosition:(int) (self.size.width / 2)];
     }];
     [level addChild:countdownNode];
 }
 
-- (void)addTarget {
+- (void)addTargetAtPosition:(int)x {
     SKNode *level = [self childNodeWithName:@"level"];
     TriangleTargetNode *triangleTarget = [TriangleTargetNode node];
     triangleTarget.name = @"target";
-    triangleTarget.position = CGPointMake(self.size.width / 2, self.size.height / 2);
+    triangleTarget.position = CGPointMake(x, self.size.height / 2);
     triangleTarget.physicsBody.angularVelocity = 3;
     [triangleTarget.physicsBody setVelocity:CGVectorMake(-23, 0)];
     [level addChild:triangleTarget];
@@ -112,9 +112,18 @@
                 ) {
             if (!triangle.exploding) {
                 [triangle explode];
+                [self runAction:[SKAction sequence:@[
+                        [SKAction waitForDuration:4],
+                        [SKAction performSelector:@selector(respawnTriangle) onTarget:self]
+                ]]];
             }
         }
     }
+}
+
+- (void)respawnTriangle {
+    float positionAdjust = (float) ((1 + arc4random_uniform(3)) / 5.0);
+    [self addTargetAtPosition:(int) ((int) self.size.width * positionAdjust)];
 }
 
 - (void)didBeginContact:(SKPhysicsContact *)contact {
