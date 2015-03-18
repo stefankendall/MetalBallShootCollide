@@ -30,19 +30,21 @@
     CountdownNode *countdownNode = (CountdownNode *) [CountdownNode countdownNode];
     countdownNode.position = CGPointMake(self.size.width / 2, self.size.height / 2);
     [countdownNode countToZero:^{
-        [self addTargetAtPosition:(int) (self.size.width / 2)];
+        [self addTargetAtPosition:(int) (self.size.width / 2) fadeInDelaySeconds:0];
     }];
     [level addChild:countdownNode];
 }
 
-- (void)addTargetAtPosition:(int)x {
+- (void)addTargetAtPosition:(int)x fadeInDelaySeconds:(float)seconds {
     SKNode *level = [self childNodeWithName:@"level"];
     TriangleTargetNode *triangleTarget = [TriangleTargetNode node];
     triangleTarget.name = @"target";
     triangleTarget.position = CGPointMake(x, self.size.height / 2);
     triangleTarget.physicsBody.angularVelocity = 3;
     [triangleTarget.physicsBody setVelocity:CGVectorMake(-23, 0)];
+    triangleTarget.alpha = 0;
     [level addChild:triangleTarget];
+    [triangleTarget runAction:[SKAction fadeAlphaTo:1 duration:seconds]];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -123,7 +125,7 @@
 
 - (void)respawnTriangle {
     float positionAdjust = (float) ((1 + arc4random_uniform(3)) / 5.0);
-    [self addTargetAtPosition:(int) ((int) self.size.width * positionAdjust)];
+    [self addTargetAtPosition:(int) ((int) self.size.width * positionAdjust) fadeInDelaySeconds:3];
 }
 
 - (void)didBeginContact:(SKPhysicsContact *)contact {
