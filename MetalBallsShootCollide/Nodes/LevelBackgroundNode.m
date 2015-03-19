@@ -16,7 +16,6 @@
     walls.path = path.CGPath;
     node.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:path.CGPath];
     node.physicsBody.categoryBitMask = CategoryWall;
-    node.physicsBody.contactTestBitMask = CategoryTarget;
     [node addChild:walls];
     return node;
 }

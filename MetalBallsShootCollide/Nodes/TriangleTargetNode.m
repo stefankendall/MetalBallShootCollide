@@ -17,7 +17,8 @@
     node.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:path];
     node.physicsBody.mass = 8;
     node.physicsBody.categoryBitMask = CategoryTarget;
-    node.physicsBody.collisionBitMask = CategoryWall;
+    node.physicsBody.collisionBitMask = CategoryWall | CategoryBall;
+    node.physicsBody.contactTestBitMask = CategoryWall | CategoryBall;
     node.physicsBody.angularDamping = 0.07;
     CGPathRelease(path);
     return (TriangleTargetNode *) node;
@@ -43,4 +44,14 @@
     [self runAction:[SKAction group:@[fadeAndRemove, sound]]];
 }
 
+- (void)setCollisionsEnabled:(BOOL)enabled {
+    if (enabled) {
+        self.physicsBody.categoryBitMask = CategoryTarget;
+        self.physicsBody.collisionBitMask = CategoryWall | CategoryBall;
+    }
+    else {
+        self.physicsBody.categoryBitMask = CategoryInvisibleTarget;
+        self.physicsBody.collisionBitMask = 0;
+    }
+}
 @end

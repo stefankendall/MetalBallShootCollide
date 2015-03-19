@@ -6,4 +6,6 @@
 @property(nonatomic) BOOL exploding;
 
 - (void)explode;
+
+- (void)setCollisionsEnabled:(BOOL)b;
 @end

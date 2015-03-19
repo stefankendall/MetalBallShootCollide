@@ -15,7 +15,9 @@
     node.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:ballRadius];
     node.physicsBody.mass = 1;
     node.physicsBody.angularDamping = 1000;
-
+    node.physicsBody.categoryBitMask = CategoryBall;
+    node.physicsBody.collisionBitMask = CategoryBall | CategoryWall | CategoryTarget;
+    node.physicsBody.contactTestBitMask = CategoryBall | CategoryWall | CategoryTarget;
     return node;
 }
 

@@ -42,9 +42,20 @@
     triangleTarget.position = CGPointMake(x, self.size.height / 2);
     triangleTarget.physicsBody.angularVelocity = 3;
     [triangleTarget.physicsBody setVelocity:CGVectorMake(-23, 0)];
-    triangleTarget.alpha = 0;
     [level addChild:triangleTarget];
-    [triangleTarget runAction:[SKAction fadeAlphaTo:1 duration:seconds]];
+
+    if (seconds > 0) {
+        triangleTarget.alpha = 0;
+        [triangleTarget setCollisionsEnabled: NO];
+        [triangleTarget runAction:
+                [SKAction sequence:@[
+                        [SKAction fadeAlphaTo:1 duration:seconds],
+                        [SKAction runBlock:^{
+                            [triangleTarget setCollisionsEnabled: YES];
+                        }]
+                ]]
+        ];
+    }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
