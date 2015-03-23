@@ -11,6 +11,8 @@
 - (void)didMoveToView:(SKView *)view {
     self.backgroundColor = [UIColor whiteColor];
     self.shootInterval = 0.15;
+    self.scoreToWin = 15;
+    self.scoreToWin = 1;
     self.physicsWorld.gravity = CGVectorMake(0, 0);
     self.physicsWorld.contactDelegate = self;
 
@@ -20,19 +22,19 @@
     level.name = @"level";
     [self addChild:level];
 
-    SKNode *shooter1 = [ShooterNode shooterIn:self position:BOTTOM];
+    SKNode *shooter1 = [ShooterNode shooterIn:self position:Player1];
     shooter1.name = @"shooter1";
     [level addChild:shooter1];
 
-    SKNode *player1Score = [ScoreNode scoreIn:self position:BOTTOM];
+    SKNode *player1Score = [ScoreNode scoreIn:self player:Player1];
     player1Score.name = @"score1";
     [level addChild:player1Score];
 
-    SKNode *player2Score = [ScoreNode scoreIn:self position:TOP];
+    SKNode *player2Score = [ScoreNode scoreIn:self player:Player2];
     player2Score.name = @"score2";
     [level addChild:player2Score];
 
-    SKNode *shooter2 = [ShooterNode shooterIn:self position:TOP];
+    SKNode *shooter2 = [ShooterNode shooterIn:self position:Player2];
     shooter2.name = @"shooter2";
     [level addChild:shooter2];
 
@@ -70,6 +72,10 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self shooterFollowTouch:touches event:event];
+    if (self.gameOver) {
+        return;
+    }
+
     LevelBackgroundNode *level = (LevelBackgroundNode *) [self childNodeWithName:@"level"];
     for (UITouch *touch in touches) {
         CGPoint point = [touch locationInNode:self];
@@ -79,7 +85,7 @@
             if (([NSDate timeIntervalSinceReferenceDate] - self.lastShotTimeShooter1) > self.shootInterval) {
                 shooter = (ShooterNode *) [self childNodeWithName:@"//shooter1"];
                 self.lastShotTimeShooter1 = [NSDate timeIntervalSinceReferenceDate];
-                BallNode *ball = [BallNode ballFromPosition:BOTTOM];
+                BallNode *ball = [BallNode ballFromPlayer:Player1];
                 [level addChild:ball];
                 [shooter shootBall:ball withVector:[self vectorTo:shooter from:touch]];
             }
@@ -88,7 +94,7 @@
             shooter = (ShooterNode *) [self childNodeWithName:@"//shooter2"];
             if (([NSDate timeIntervalSinceReferenceDate] - self.lastShotTimeShooter2) > self.shootInterval) {
                 self.lastShotTimeShooter2 = [NSDate timeIntervalSinceReferenceDate];
-                BallNode *ball = [BallNode ballFromPosition:TOP];
+                BallNode *ball = [BallNode ballFromPlayer:Player2];
                 [level addChild:ball];
                 [shooter shootBall:ball withVector:[self vectorTo:shooter from:touch]];
             }
@@ -145,6 +151,11 @@
                 }
 
                 [playerScore setScore:playerScore.score + target.value];
+
+                if (playerScore.score >= self.scoreToWin) {
+                    self.gameOver = YES;
+                    return;
+                }
 
                 [self runAction:[SKAction sequence:@[
                         [SKAction waitForDuration:4],

@@ -5,16 +5,16 @@
 @class BallNode;
 @class GameScene;
 
-typedef NS_ENUM(NSUInteger, Position) {
-    TOP,
-    BOTTOM
+typedef NS_ENUM(NSUInteger, Player) {
+    Player2,
+    Player1
 };
 
 @interface ShooterNode : SKNode
 
-@property(nonatomic) enum Position positionInScene;
+@property(nonatomic) enum Player player;
 
 - (void)shootBall:(BallNode *)node withVector:(CGVector)vector;
 
-+ (SKNode *)shooterIn:(SKNode *)parent position:(enum Position)position;
++ (SKNode *)shooterIn:(SKNode *)parent position:(enum Player)player;
 @end

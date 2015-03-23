@@ -54,6 +54,7 @@
 		54590094B575EFA800DA8552 /* TargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetNode.m; sourceTree = "<group>"; };
 		545900FF2046079DEC2A2638 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		545901CB18EA1A098E819E8D /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		5459027911B7974A5C590CCA /* PlayerEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerEnum.h; sourceTree = "<group>"; };
 		5459034F753FD70D04EB4303 /* short_explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_explosion.mp3; sourceTree = "<group>"; };
 		5459036A68F655B93CE50A57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		545904702C600889242FBD11 /* p2ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2ball@2x.png"; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 				54590047F9F179A2A91CADA7 /* SKEmitterNode+HelperExtensions.h */,
 				54590B96FD61137335B7EB44 /* ContactCategoryMask.h */,
 				54590CCB744CB91ACF44CD6D /* sounds */,
+				5459027911B7974A5C590CCA /* PlayerEnum.h */,
 			);
 			path = MetalBallsShootCollide;
 			sourceTree = "<group>";

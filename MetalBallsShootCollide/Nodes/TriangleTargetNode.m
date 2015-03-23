@@ -23,7 +23,16 @@
     node.physicsBody.contactTestBitMask = CategoryWall | CategoryBall;
     node.physicsBody.angularDamping = 0.07;
     CGPathRelease(path);
-    return (TriangleTargetNode *) node;
+
+    SKLabelNode *pointLabel = [SKLabelNode labelNodeWithFontNamed:@"Avenir-Black"];
+    [pointLabel setVerticalAlignmentMode:SKLabelVerticalAlignmentModeTop];
+    [pointLabel setFontColor:[UIColor blackColor]];
+    [pointLabel setFontSize:20];
+    [pointLabel setPosition:CGPointMake(-2, 0)];
+    [pointLabel setText:[NSString stringWithFormat:@"%d", node.value]];
+    [node addChild:pointLabel];
+
+    return node;
 }
 
 - (void)explode {

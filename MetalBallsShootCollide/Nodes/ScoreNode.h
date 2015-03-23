@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
+#import "ShooterNode.h"
 
 @class GameScene;
 
@@ -8,5 +9,5 @@
 
 @property(nonatomic) int score;
 
-+ (SKNode *)scoreIn:(GameScene *)scene position:(enum Position)position;
++ (SKNode *)scoreIn:(GameScene *)scene player:(enum Player)player;
 @end

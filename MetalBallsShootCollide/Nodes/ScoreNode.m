@@ -11,7 +11,7 @@
     [scoreText setText:[NSString stringWithFormat:@"%d pts", score]];
 }
 
-+ (SKNode *)scoreIn:(GameScene *)scene position:(enum Position)position {
++ (SKNode *)scoreIn:(GameScene *)scene player:(enum Player)player {
     ScoreNode *node = [self node];
 
     int vPad = 10;
@@ -27,7 +27,7 @@
     label.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     label.verticalAlignmentMode = SKLabelVerticalAlignmentModeBottom;
 
-    if (position == BOTTOM) {
+    if (player == Player1) {
         node.position = CGPointMake(hPad, vPad);
     }
     else {

@@ -4,9 +4,9 @@
 #import "ShooterNode.h"
 
 @interface BallNode : SKNode
-@property(nonatomic) Position positionInScene;
+@property(nonatomic) Player PlayerInScene;
 
-+ (instancetype)ballFromPosition:(Position)position;
++ (instancetype)ballFromPlayer:(enum Player)player;
 
 - (void)shootAlongVector:(CGVector)vector;
 

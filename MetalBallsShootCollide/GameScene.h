@@ -7,4 +7,8 @@
 
 @property(nonatomic) CFTimeInterval shootInterval;
 @property(nonatomic) int targetExplodeHeightFromEdge;
+
+@property(nonatomic) BOOL gameOver;
+
+@property(nonatomic) int scoreToWin;
 @end

@@ -3,13 +3,13 @@
 
 @implementation BallNode
 
-+ (instancetype)ballFromPosition:(Position)position {
++ (instancetype)ballFromPlayer:(Player)player {
     BallNode *node = [self node];
     node.physicsBody.categoryBitMask = CategoryBall;
 
-    node.positionInScene = position;
+    node.PlayerInScene = player;
     int ballRadius = 8;
-    SKSpriteNode *ball = [SKSpriteNode spriteNodeWithImageNamed:[self imageNameForPosition:position]];
+    SKSpriteNode *ball = [SKSpriteNode spriteNodeWithImageNamed:[self imageNameForPlayer:player]];
     ball.name = @"ball";
     [node addChild:ball];
     node.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:ballRadius];
@@ -21,8 +21,8 @@
     return node;
 }
 
-+ (NSString *)imageNameForPosition:(Position)position {
-    return position == BOTTOM ? @"p1Ball" : @"p2ball";
++ (NSString *)imageNameForPlayer:(Player)player {
+    return player == Player1 ? @"p1Ball" : @"p2ball";
 }
 
 - (void)shootAlongVector:(CGVector)vector {
