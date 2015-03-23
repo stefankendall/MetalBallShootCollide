@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		024E08D51AB63AD60001B913 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 024E08D31AB63AD60001B913 /* explosion.sks */; };
 		024E08D61AB63AD60001B913 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 024E08D41AB63AD60001B913 /* spark.png */; };
+		5459005A01704ADD3D6C2A45 /* ScoreNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459066A0262F453DC694B1C /* ScoreNode.m */; };
 		54590072E76D7813173F1A19 /* MetalBallsShootCollideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D424FB42B32DBE47398 /* MetalBallsShootCollideTests.m */; };
 		545901EF4625D2D1A35BB2BC /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907EB9F391968CDE5C642 /* GameScene.m */; };
 		545902925B833D533C1F06E0 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901CB18EA1A098E819E8D /* GameViewController.m */; };
@@ -17,6 +18,7 @@
 		545903EBEE232CBF7F940026 /* ShooterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459002BB5A5230D20F08BF0 /* ShooterNode.m */; };
 		54590600CACC3ECFFD231713 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590C46E6024176FA0CA422 /* LaunchScreen.xib */; };
 		545906D1A741D5B907EE07C6 /* LevelBackgroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B2965ABEE3A0CE4AD93 /* LevelBackgroundNode.m */; };
+		5459070DC79F6DFB9026F4F7 /* TargetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590094B575EFA800DA8552 /* TargetNode.m */; };
 		54590864C036B2CCC9E6842C /* SKEmitterNode+HelperExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CF692AF5D8B87524D82 /* SKEmitterNode+HelperExtensions.m */; };
 		5459089DA0738AC1F2A2793A /* short_beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54590D4E0B28031FFAAC4DB8 /* short_beep.mp3 */; };
 		545908AE25086F5D9D9E32E6 /* TriangleTargetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */; };
@@ -47,7 +49,9 @@
 		024E08D41AB63AD60001B913 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		5459002BB5A5230D20F08BF0 /* ShooterNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShooterNode.m; sourceTree = "<group>"; };
 		54590039BBD6C3BBD379CF6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5459004186AA08B88C2CB07B /* ScoreNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreNode.h; sourceTree = "<group>"; };
 		54590047F9F179A2A91CADA7 /* SKEmitterNode+HelperExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+HelperExtensions.h"; sourceTree = "<group>"; };
+		54590094B575EFA800DA8552 /* TargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetNode.m; sourceTree = "<group>"; };
 		545900FF2046079DEC2A2638 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		545901CB18EA1A098E819E8D /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		5459034F753FD70D04EB4303 /* short_explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_explosion.mp3; sourceTree = "<group>"; };
@@ -55,8 +59,10 @@
 		545904702C600889242FBD11 /* p2ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2ball@2x.png"; sourceTree = "<group>"; };
 		5459052A126DCBAA603B4368 /* MetalBallsShootCollide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBallsShootCollide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleTargetNode.m; sourceTree = "<group>"; };
+		5459066A0262F453DC694B1C /* ScoreNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreNode.m; sourceTree = "<group>"; };
 		545906AA55E0FB92D7514C65 /* BallNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallNode.m; sourceTree = "<group>"; };
 		545906B99F6EE3ACF14C762A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5459070281355832564F94B6 /* TargetNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetNode.h; sourceTree = "<group>"; };
 		5459074AA17E8C2570E5EBC5 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		545907615617A06DBBB791C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		545907EB9F391968CDE5C642 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
@@ -172,6 +178,10 @@
 				54590EA2B75E46E86984D746 /* CountdownNode.h */,
 				024E08D31AB63AD60001B913 /* explosion.sks */,
 				024E08D41AB63AD60001B913 /* spark.png */,
+				5459004186AA08B88C2CB07B /* ScoreNode.h */,
+				5459066A0262F453DC694B1C /* ScoreNode.m */,
+				54590094B575EFA800DA8552 /* TargetNode.m */,
+				5459070281355832564F94B6 /* TargetNode.h */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -326,6 +336,8 @@
 				545906D1A741D5B907EE07C6 /* LevelBackgroundNode.m in Sources */,
 				54590864C036B2CCC9E6842C /* SKEmitterNode+HelperExtensions.m in Sources */,
 				54590B488FDAE23BBCF421F1 /* CountdownNode.m in Sources */,
+				5459005A01704ADD3D6C2A45 /* ScoreNode.m in Sources */,
+				5459070DC79F6DFB9026F4F7 /* TargetNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

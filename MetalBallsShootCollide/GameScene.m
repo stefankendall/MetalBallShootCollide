@@ -4,6 +4,7 @@
 #import "LevelBackgroundNode.h"
 #import "ContactCategoryMask.h"
 #import "CountdownNode.h"
+#import "ScoreNode.h"
 
 @implementation GameScene
 
@@ -23,6 +24,14 @@
     shooter1.name = @"shooter1";
     [level addChild:shooter1];
 
+    SKNode *player1Score = [ScoreNode scoreIn:self position:BOTTOM];
+    player1Score.name = @"score1";
+    [level addChild:player1Score];
+
+    SKNode *player2Score = [ScoreNode scoreIn:self position:TOP];
+    player2Score.name = @"score2";
+    [level addChild:player2Score];
+
     SKNode *shooter2 = [ShooterNode shooterIn:self position:TOP];
     shooter2.name = @"shooter2";
     [level addChild:shooter2];
@@ -37,7 +46,7 @@
 
 - (void)addTargetAtPosition:(int)x fadeInDelaySeconds:(float)seconds {
     SKNode *level = [self childNodeWithName:@"level"];
-    TriangleTargetNode *triangleTarget = [TriangleTargetNode node];
+    TriangleTargetNode *triangleTarget = [TriangleTargetNode target];
     triangleTarget.name = @"target";
     triangleTarget.position = CGPointMake(x, self.size.height / 2);
     triangleTarget.physicsBody.angularVelocity = 3;
@@ -46,12 +55,12 @@
 
     if (seconds > 0) {
         triangleTarget.alpha = 0;
-        [triangleTarget setCollisionsEnabled: NO];
+        [triangleTarget setCollisionsEnabled:NO];
         [triangleTarget runAction:
                 [SKAction sequence:@[
                         [SKAction fadeAlphaTo:1 duration:seconds],
                         [SKAction runBlock:^{
-                            [triangleTarget setCollisionsEnabled: YES];
+                            [triangleTarget setCollisionsEnabled:YES];
                         }]
                 ]]
         ];
@@ -118,13 +127,24 @@
 }
 
 - (void)update:(CFTimeInterval)currentTime {
-    TriangleTargetNode *triangle = (TriangleTargetNode *) [self childNodeWithName:@"//target"];
-    if (triangle != nil) {
-        if (triangle.position.y < self.targetExplodeHeightFromEdge ||
-                triangle.position.y > self.size.height - self.targetExplodeHeightFromEdge
+    TriangleTargetNode *target = (TriangleTargetNode *) [self childNodeWithName:@"//target"];
+    if (target != nil) {
+        if (target.position.y < self.targetExplodeHeightFromEdge ||
+                target.position.y > self.size.height - self.targetExplodeHeightFromEdge
                 ) {
-            if (!triangle.exploding) {
-                [triangle explode];
+            if (!target.exploding) {
+                [target explode];
+
+                ScoreNode *playerScore = nil;
+                if (target.position.y < self.targetExplodeHeightFromEdge) {
+                    playerScore = (ScoreNode *) [self childNodeWithName:@"//score2"];
+                }
+                else {
+                    playerScore = (ScoreNode *) [self childNodeWithName:@"//score1"];
+                }
+
+                [playerScore setScore:playerScore.score + target.value];
+
                 [self runAction:[SKAction sequence:@[
                         [SKAction waitForDuration:4],
                         [SKAction performSelector:@selector(respawnTriangle) onTarget:self]

@@ -4,8 +4,10 @@
 
 @implementation TriangleTargetNode
 
-+ (instancetype)node {
-    SKNode *node = [super node];
++ (instancetype)target {
+    TriangleTargetNode *node = [self node];
+    node.value = 1;
+
     SKSpriteNode *triangle = [SKSpriteNode spriteNodeWithImageNamed:@"triangle"];
     [node addChild:triangle];
 
