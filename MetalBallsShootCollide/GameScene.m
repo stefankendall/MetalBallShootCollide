@@ -58,10 +58,11 @@
         [triangleTarget setCollisionsEnabled:NO];
         [triangleTarget runAction:
                 [SKAction sequence:@[
-                        [SKAction fadeAlphaTo:1 duration:seconds],
+                        [SKAction fadeAlphaTo:0.3 duration:seconds],
                         [SKAction runBlock:^{
                             [triangleTarget setCollisionsEnabled:YES];
-                        }]
+                        }],
+                        [SKAction fadeAlphaTo:1 duration:0]
                 ]]
         ];
     }
