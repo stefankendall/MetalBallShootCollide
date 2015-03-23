@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, Player) {
+enum Player {
     Player2,
     Player1
 };

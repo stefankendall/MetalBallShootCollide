@@ -1,6 +1,8 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+#import "ShooterNode.h"
+#import "GameOverViewController.h"
 
 @implementation SKScene (Unarchive)
 
@@ -26,19 +28,25 @@
     [super viewDidLoad];
 
     SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
+//    skView.showsFPS = YES;
 //    skView.showsNodeCount = YES;
     skView.ignoresSiblingOrder = YES;
 //    skView.showsPhysics = YES;
     
     GameScene *scene = [[GameScene alloc] initWithSize:self.view.frame.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
+    scene.gameOverDelegate = self;
     
     [skView presentScene:scene];
 }
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+- (void)gameOverByVictory:(enum Player)player {
+    GameOverViewController *controller = [[UIStoryboard storyboardWithName:@"GameOverViewController" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end

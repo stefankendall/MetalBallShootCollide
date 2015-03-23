@@ -5,6 +5,8 @@
 #import "ContactCategoryMask.h"
 #import "CountdownNode.h"
 #import "ScoreNode.h"
+#import "PlayerEnum.h"
+#import "GameOverDelegate.h"
 
 @implementation GameScene
 
@@ -154,6 +156,7 @@
 
                 if (playerScore.score >= self.scoreToWin) {
                     self.gameOver = YES;
+                    [self.gameOverDelegate gameOverByVictory:playerScore.player];
                     return;
                 }
 

@@ -1,6 +1,6 @@
 #import "ScoreNode.h"
 #import "GameScene.h"
-#import "ShooterNode.h"
+#import "PlayerEnum.h"
 
 @implementation ScoreNode
 
@@ -13,6 +13,7 @@
 
 + (SKNode *)scoreIn:(GameScene *)scene player:(enum Player)player {
     ScoreNode *node = [self node];
+    node.player = player;
 
     int vPad = 10;
     int hPad = 20;

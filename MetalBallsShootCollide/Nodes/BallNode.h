@@ -2,9 +2,10 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #import "ShooterNode.h"
+#import "PlayerEnum.h"
 
 @interface BallNode : SKNode
-@property(nonatomic) Player PlayerInScene;
+@property(nonatomic) enum Player player;
 
 + (instancetype)ballFromPlayer:(enum Player)player;
 

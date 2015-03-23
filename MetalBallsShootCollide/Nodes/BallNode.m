@@ -3,11 +3,11 @@
 
 @implementation BallNode
 
-+ (instancetype)ballFromPlayer:(Player)player {
++ (instancetype)ballFromPlayer:(enum Player)player {
     BallNode *node = [self node];
     node.physicsBody.categoryBitMask = CategoryBall;
 
-    node.PlayerInScene = player;
+    node.player = player;
     int ballRadius = 8;
     SKSpriteNode *ball = [SKSpriteNode spriteNodeWithImageNamed:[self imageNameForPlayer:player]];
     ball.name = @"ball";
@@ -21,7 +21,7 @@
     return node;
 }
 
-+ (NSString *)imageNameForPlayer:(Player)player {
++ (NSString *)imageNameForPlayer:(enum Player)player {
     return player == Player1 ? @"p1Ball" : @"p2ball";
 }
 

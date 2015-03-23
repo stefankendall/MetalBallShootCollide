@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k8p-OK-iYM">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Game Over View Controller-->
+        <scene sceneID="15G-1y-XiP">
+            <objects>
+                <viewController id="k8p-OK-iYM" customClass="GameOverViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DDR-IZ-cNn"/>
+                        <viewControllerLayoutGuide type="bottom" id="4de-tW-oRS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F94-5f-DGE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Lose :(" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EL-mN-rdU">
+                                <rect key="frame" x="0.0" y="294" width="320" height="274"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Win :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDN-sI-mb6">
+                                <rect key="frame" x="0.0" y="20" width="320" height="274"/>
+                                <color key="backgroundColor" red="0.22352941179999999" green="0.5450980392" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8EL-mN-rdU" secondAttribute="trailing" id="I9a-xr-YUb"/>
+                            <constraint firstAttribute="trailing" secondItem="iDN-sI-mb6" secondAttribute="trailing" id="N7v-ox-G9D"/>
+                            <constraint firstItem="8EL-mN-rdU" firstAttribute="height" secondItem="iDN-sI-mb6" secondAttribute="height" id="O2r-89-1kG"/>
+                            <constraint firstItem="8EL-mN-rdU" firstAttribute="top" secondItem="iDN-sI-mb6" secondAttribute="bottom" id="QFz-0x-9hj"/>
+                            <constraint firstItem="iDN-sI-mb6" firstAttribute="top" secondItem="DDR-IZ-cNn" secondAttribute="bottom" id="qaK-pP-Ot6"/>
+                            <constraint firstItem="8EL-mN-rdU" firstAttribute="leading" secondItem="F94-5f-DGE" secondAttribute="leading" id="s3N-GJ-q0H"/>
+                            <constraint firstItem="4de-tW-oRS" firstAttribute="top" secondItem="8EL-mN-rdU" secondAttribute="bottom" id="tGA-Cj-BaO"/>
+                            <constraint firstItem="iDN-sI-mb6" firstAttribute="leading" secondItem="F94-5f-DGE" secondAttribute="leading" id="viG-Rt-3Ri"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="p1Label" destination="8EL-mN-rdU" id="FxJ-En-BvV"/>
+                        <outlet property="p2Label" destination="iDN-sI-mb6" id="Jrl-rr-F4k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pfm-zU-4Xm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="216" y="353"/>
+        </scene>
+    </scenes>
+</document>

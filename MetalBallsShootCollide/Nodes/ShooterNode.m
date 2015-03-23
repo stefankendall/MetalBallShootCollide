@@ -12,7 +12,7 @@
     [self runAction:[SKAction playSoundFileNamed:@"shoot.wav" waitForCompletion:NO]];
 }
 
-+ (SKNode *)shooterIn:(SKNode *)parent position:(Player)player {
++ (SKNode *)shooterIn:(SKNode *)parent position:(enum Player)player {
     ShooterNode *node = [self node];
     node.player = player;
     node.position = CGPointMake(parent.frame.size.width / 2, player == Player1 ? 0 : parent.frame.size.height);
