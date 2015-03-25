@@ -5,7 +5,6 @@
 #import "ContactCategoryMask.h"
 #import "CountdownNode.h"
 #import "ScoreNode.h"
-#import "PlayerEnum.h"
 #import "GameOverDelegate.h"
 
 @implementation GameScene

@@ -46,6 +46,7 @@
 
 - (void)gameOverByVictory:(enum Player)player {
     GameOverViewController *controller = [[UIStoryboard storyboardWithName:@"GameOverViewController" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    controller.winner = player;
     [self presentViewController:controller animated:YES completion:nil];
 }
 

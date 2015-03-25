@@ -39,7 +39,7 @@
     SKSpriteNode *ball = (SKSpriteNode *) [self childNodeWithName:@"ball"];
     [ball runAction:[SKAction sequence:@[waitForFade, doFade]]];
 
-    SKAction *wait = [SKAction waitForDuration:3];
+    SKAction *wait = [SKAction waitForDuration:2];
     SKAction *remove = [SKAction removeFromParent];
 
     [self runAction:[SKAction sequence:@[wait, remove]]];
