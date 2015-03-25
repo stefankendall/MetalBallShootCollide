@@ -11,6 +11,7 @@
 		024E08D61AB63AD60001B913 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 024E08D41AB63AD60001B913 /* spark.png */; };
 		5459005A01704ADD3D6C2A45 /* ScoreNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459066A0262F453DC694B1C /* ScoreNode.m */; };
 		54590072E76D7813173F1A19 /* MetalBallsShootCollideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D424FB42B32DBE47398 /* MetalBallsShootCollideTests.m */; };
+		54590080D316FE13E9DD5EFD /* UIImage+ColorFromImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 545908F56AE2709B578FDE2C /* UIImage+ColorFromImage.m */; };
 		545901EF4625D2D1A35BB2BC /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907EB9F391968CDE5C642 /* GameScene.m */; };
 		545902925B833D533C1F06E0 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901CB18EA1A098E819E8D /* GameViewController.m */; };
 		545902C5CF008E57298B40D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54590D27DA64855650F0718C /* Images.xcassets */; };
@@ -63,6 +64,7 @@
 		5459052A126DCBAA603B4368 /* MetalBallsShootCollide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBallsShootCollide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleTargetNode.m; sourceTree = "<group>"; };
 		5459066A0262F453DC694B1C /* ScoreNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreNode.m; sourceTree = "<group>"; };
+		545906A4AC61EF97533E9BF4 /* UIImage+ColorFromImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorFromImage.h"; sourceTree = "<group>"; };
 		545906AA55E0FB92D7514C65 /* BallNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallNode.m; sourceTree = "<group>"; };
 		545906B99F6EE3ACF14C762A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5459070281355832564F94B6 /* TargetNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetNode.h; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		545907EB9F391968CDE5C642 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		5459086E900DE0082FD8E883 /* BallNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallNode.h; sourceTree = "<group>"; };
 		545908BBF46B7ABCF3125A46 /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
+		545908F56AE2709B578FDE2C /* UIImage+ColorFromImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorFromImage.m"; sourceTree = "<group>"; };
 		5459094AAB55836FD7B152DD /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		545909B77EEB2BFF0D5F7AA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		545909C6235944D3B1D9C380 /* p1ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p1ball@2x.png"; sourceTree = "<group>"; };
@@ -160,8 +163,18 @@
 				5459027911B7974A5C590CCA /* PlayerEnum.h */,
 				54590CA621516EEFEAD5BBEF /* GameOverDelegate.h */,
 				54590C57109D87C2963FF947 /* GameOver */,
+				54590665B188CDC2BDED34F1 /* Helper */,
 			);
 			path = MetalBallsShootCollide;
+			sourceTree = "<group>";
+		};
+		54590665B188CDC2BDED34F1 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				545908F56AE2709B578FDE2C /* UIImage+ColorFromImage.m */,
+				545906A4AC61EF97533E9BF4 /* UIImage+ColorFromImage.h */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		545907FEC2458EA139BB87C8 /* Supporting Files */ = {
@@ -360,6 +373,7 @@
 				5459005A01704ADD3D6C2A45 /* ScoreNode.m in Sources */,
 				5459070DC79F6DFB9026F4F7 /* TargetNode.m in Sources */,
 				54590E16A6B3776B333CFA43 /* GameOverViewController.m in Sources */,
+				54590080D316FE13E9DD5EFD /* UIImage+ColorFromImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

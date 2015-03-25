@@ -13,7 +13,7 @@
     self.backgroundColor = [UIColor whiteColor];
     self.shootInterval = 0.15;
     self.scoreToWin = 15;
-    self.scoreToWin = 2;
+    self.scoreToWin = 1;
     self.targetRespawnTimeInSeconds = 1;
 
     self.physicsWorld.gravity = CGVectorMake(0, 0);

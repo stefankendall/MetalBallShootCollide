@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k8p-OK-iYM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k8p-OK-iYM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Game Over View Controller-->
@@ -30,23 +30,59 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3br-7h-TdX">
+                                <rect key="frame" x="0.0" y="295" width="320" height="64"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="J33-dd-anO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
+                                <state key="normal" title="REMATCH">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="p1RematchTapped:" destination="k8p-OK-iYM" eventType="touchUpInside" id="wjW-52-eN7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yek-8S-Oky">
+                                <rect key="frame" x="0.0" y="229" width="320" height="64"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
+                                <state key="normal" title="REMATCH">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="p2RematchTapped:" destination="k8p-OK-iYM" eventType="touchUpInside" id="O88-kj-xmA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3br-7h-TdX" firstAttribute="height" secondItem="yek-8S-Oky" secondAttribute="height" id="23F-Hm-3xG"/>
+                            <constraint firstAttribute="trailing" secondItem="3br-7h-TdX" secondAttribute="trailing" id="4Py-up-FVL"/>
                             <constraint firstAttribute="trailing" secondItem="8EL-mN-rdU" secondAttribute="trailing" id="I9a-xr-YUb"/>
+                            <constraint firstAttribute="trailing" secondItem="yek-8S-Oky" secondAttribute="trailing" id="MpC-Mp-TE7"/>
                             <constraint firstAttribute="trailing" secondItem="iDN-sI-mb6" secondAttribute="trailing" id="N7v-ox-G9D"/>
                             <constraint firstItem="8EL-mN-rdU" firstAttribute="height" secondItem="iDN-sI-mb6" secondAttribute="height" id="O2r-89-1kG"/>
                             <constraint firstItem="8EL-mN-rdU" firstAttribute="top" secondItem="iDN-sI-mb6" secondAttribute="bottom" id="QFz-0x-9hj"/>
+                            <constraint firstItem="3br-7h-TdX" firstAttribute="top" secondItem="iDN-sI-mb6" secondAttribute="bottom" constant="1" id="Xr7-Mh-HFt"/>
+                            <constraint firstItem="3br-7h-TdX" firstAttribute="leading" secondItem="F94-5f-DGE" secondAttribute="leading" id="luW-bc-ZDV"/>
+                            <constraint firstItem="yek-8S-Oky" firstAttribute="leading" secondItem="F94-5f-DGE" secondAttribute="leading" id="oIG-aO-bGw"/>
                             <constraint firstItem="iDN-sI-mb6" firstAttribute="top" secondItem="DDR-IZ-cNn" secondAttribute="bottom" id="qaK-pP-Ot6"/>
                             <constraint firstItem="8EL-mN-rdU" firstAttribute="leading" secondItem="F94-5f-DGE" secondAttribute="leading" id="s3N-GJ-q0H"/>
                             <constraint firstItem="4de-tW-oRS" firstAttribute="top" secondItem="8EL-mN-rdU" secondAttribute="bottom" id="tGA-Cj-BaO"/>
                             <constraint firstItem="iDN-sI-mb6" firstAttribute="leading" secondItem="F94-5f-DGE" secondAttribute="leading" id="viG-Rt-3Ri"/>
+                            <constraint firstItem="8EL-mN-rdU" firstAttribute="top" secondItem="yek-8S-Oky" secondAttribute="bottom" constant="1" id="ynX-qx-PHs"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="p1Label" destination="8EL-mN-rdU" id="FxJ-En-BvV"/>
+                        <outlet property="p1RematchButton" destination="3br-7h-TdX" id="7Nr-t4-jv4"/>
                         <outlet property="p2Label" destination="iDN-sI-mb6" id="Jrl-rr-F4k"/>
+                        <outlet property="p2RematchButton" destination="yek-8S-Oky" id="rXn-xd-RZd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfm-zU-4Xm" userLabel="First Responder" sceneMemberID="firstResponder"/>
