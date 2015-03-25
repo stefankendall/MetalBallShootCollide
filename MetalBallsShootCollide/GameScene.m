@@ -14,7 +14,9 @@
     self.backgroundColor = [UIColor whiteColor];
     self.shootInterval = 0.15;
     self.scoreToWin = 15;
-    self.scoreToWin = 1;
+    self.scoreToWin = 2;
+    self.targetRespawnTimeInSeconds = 1;
+
     self.physicsWorld.gravity = CGVectorMake(0, 0);
     self.physicsWorld.contactDelegate = self;
 
@@ -58,11 +60,11 @@
     [level addChild:triangleTarget];
 
     if (seconds > 0) {
-        triangleTarget.alpha = 0;
+        triangleTarget.alpha = 0.1;
         [triangleTarget setCollisionsEnabled:NO];
         [triangleTarget runAction:
                 [SKAction sequence:@[
-                        [SKAction fadeAlphaTo:0.3 duration:seconds],
+                        [SKAction fadeAlphaTo:0.4 duration:seconds],
                         [SKAction runBlock:^{
                             [triangleTarget setCollisionsEnabled:YES];
                         }],
@@ -161,7 +163,7 @@
                 }
 
                 [self runAction:[SKAction sequence:@[
-                        [SKAction waitForDuration:4],
+                        [SKAction waitForDuration:self.targetRespawnTimeInSeconds],
                         [SKAction performSelector:@selector(respawnTriangle) onTarget:self]
                 ]]];
             }
@@ -171,7 +173,7 @@
 
 - (void)respawnTriangle {
     float positionAdjust = (float) ((1 + arc4random_uniform(3)) / 5.0);
-    [self addTargetAtPosition:(int) ((int) self.size.width * positionAdjust) fadeInDelaySeconds:3];
+    [self addTargetAtPosition:(int) ((int) self.size.width * positionAdjust) fadeInDelaySeconds:2];
 }
 
 - (void)didBeginContact:(SKPhysicsContact *)contact {

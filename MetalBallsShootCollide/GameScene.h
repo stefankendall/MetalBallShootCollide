@@ -15,4 +15,5 @@
 
 @property(nonatomic) int scoreToWin;
 @property(nonatomic, strong) id <GameOverDelegate> gameOverDelegate;
+@property(nonatomic) NSTimeInterval targetRespawnTimeInSeconds;
 @end

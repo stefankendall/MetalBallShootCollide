@@ -22,7 +22,7 @@
 }
 
 + (NSString *)imageNameForPlayer:(enum Player)player {
-    return player == Player1 ? @"p1Ball" : @"p2ball";
+    return player == Player1 ? @"p1ball" : @"p2ball";
 }
 
 - (void)shootAlongVector:(CGVector)vector {
