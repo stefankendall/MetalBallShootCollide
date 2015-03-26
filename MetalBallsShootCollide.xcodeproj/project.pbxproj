@@ -12,6 +12,7 @@
 		5459005A01704ADD3D6C2A45 /* ScoreNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459066A0262F453DC694B1C /* ScoreNode.m */; };
 		54590072E76D7813173F1A19 /* MetalBallsShootCollideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590D424FB42B32DBE47398 /* MetalBallsShootCollideTests.m */; };
 		54590080D316FE13E9DD5EFD /* UIImage+ColorFromImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 545908F56AE2709B578FDE2C /* UIImage+ColorFromImage.m */; };
+		54590109BDFC78F06E187F4D /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54590DB0B0F0A8E00DCDEE8B /* MenuViewController.storyboard */; };
 		545901EF4625D2D1A35BB2BC /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907EB9F391968CDE5C642 /* GameScene.m */; };
 		545902925B833D533C1F06E0 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545901CB18EA1A098E819E8D /* GameViewController.m */; };
 		545902C5CF008E57298B40D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54590D27DA64855650F0718C /* Images.xcassets */; };
@@ -21,6 +22,7 @@
 		54590600CACC3ECFFD231713 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590C46E6024176FA0CA422 /* LaunchScreen.xib */; };
 		545906D1A741D5B907EE07C6 /* LevelBackgroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B2965ABEE3A0CE4AD93 /* LevelBackgroundNode.m */; };
 		5459070DC79F6DFB9026F4F7 /* TargetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590094B575EFA800DA8552 /* TargetNode.m */; };
+		545907E241E5F327E5D3EC7F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E0DBA265572974476F6 /* MenuViewController.m */; };
 		54590864C036B2CCC9E6842C /* SKEmitterNode+HelperExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CF692AF5D8B87524D82 /* SKEmitterNode+HelperExtensions.m */; };
 		5459089DA0738AC1F2A2793A /* short_beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54590D4E0B28031FFAAC4DB8 /* short_beep.mp3 */; };
 		545908AE25086F5D9D9E32E6 /* TriangleTargetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */; };
@@ -80,6 +82,7 @@
 		545909B77EEB2BFF0D5F7AA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		545909C6235944D3B1D9C380 /* p1ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p1ball@2x.png"; sourceTree = "<group>"; };
 		545909FD2A38C83F8185F385 /* MetalBallsShootCollideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalBallsShootCollideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54590A7FAA0D6E847EDFDB7C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		54590AB43C6BA5EC1A569C9E /* CountdownNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownNode.m; sourceTree = "<group>"; };
 		54590B2965ABEE3A0CE4AD93 /* LevelBackgroundNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelBackgroundNode.m; sourceTree = "<group>"; };
 		54590B3A1382A983776A1300 /* go.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = go.mp3; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 		54590D27DA64855650F0718C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		54590D424FB42B32DBE47398 /* MetalBallsShootCollideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetalBallsShootCollideTests.m; sourceTree = "<group>"; };
 		54590D4E0B28031FFAAC4DB8 /* short_beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_beep.mp3; sourceTree = "<group>"; };
+		54590DB0B0F0A8E00DCDEE8B /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
+		54590E0DBA265572974476F6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		54590EA2B75E46E86984D746 /* CountdownNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownNode.h; sourceTree = "<group>"; };
 		54590F9CC91E6A68BC80BD31 /* ShooterNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShooterNode.h; sourceTree = "<group>"; };
 		54590FB336F98440BDFFCFCD /* shoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shoot.wav; sourceTree = "<group>"; };
@@ -133,6 +138,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		54590630E328A1E1D7F9D935 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				54590DB0B0F0A8E00DCDEE8B /* MenuViewController.storyboard */,
+				54590E0DBA265572974476F6 /* MenuViewController.m */,
+				54590A7FAA0D6E847EDFDB7C /* MenuViewController.h */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		5459064981428EC132FF7B3E /* MetalBallsShootCollideTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +180,7 @@
 				54590CA621516EEFEAD5BBEF /* GameOverDelegate.h */,
 				54590C57109D87C2963FF947 /* GameOver */,
 				54590665B188CDC2BDED34F1 /* Helper */,
+				54590630E328A1E1D7F9D935 /* Menu */,
 			);
 			path = MetalBallsShootCollide;
 			sourceTree = "<group>";
@@ -337,6 +353,7 @@
 				54590D9F619270CC45B0604C /* go.mp3 in Resources */,
 				54590CC9F8EB35B81419537D /* shoot.wav in Resources */,
 				545905EE0DFE242F64FBD20B /* GameOverViewController.storyboard in Resources */,
+				54590109BDFC78F06E187F4D /* MenuViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +393,7 @@
 				5459070DC79F6DFB9026F4F7 /* TargetNode.m in Sources */,
 				54590E16A6B3776B333CFA43 /* GameOverViewController.m in Sources */,
 				54590080D316FE13E9DD5EFD /* UIImage+ColorFromImage.m in Sources */,
+				545907E241E5F327E5D3EC7F /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

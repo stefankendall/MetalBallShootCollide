@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="m0D-Us-jgG">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Menu View Controller-->
+        <scene sceneID="CtS-rA-C9T">
+            <objects>
+                <viewController id="LVB-YS-i5n" customClass="MenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PCf-gQ-wO7"/>
+                        <viewControllerLayoutGuide type="bottom" id="b3d-qh-BLL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bdc-N1-crn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4JB-kC-zj0">
+                                <rect key="frame" x="0.0" y="334" width="375" height="333"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY FOR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbo-3p-cUb">
+                                        <rect key="frame" x="33" y="8" width="308.5" height="87.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="64"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vjd-tV-9rn">
+                                        <rect key="frame" x="8" y="103" width="359" height="44.5"/>
+                                        <segments>
+                                            <segment title="2 mins"/>
+                                            <segment title="∞"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="p1TimeChanged:" destination="LVB-YS-i5n" eventType="valueChanged" id="0oy-eb-jqr"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aS6-Nc-ruC">
+                                        <rect key="frame" x="8" y="154.5" width="359" height="44.5"/>
+                                        <segments>
+                                            <segment title="5 pts"/>
+                                            <segment title="∞"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="p1PointsChanged:" destination="LVB-YS-i5n" eventType="valueChanged" id="fZg-g6-2fX"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39Y-F4-KyJ">
+                                        <rect key="frame" x="8" y="238" width="359" height="86.5"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="START!">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" title="READY!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="p1StartButtonSelected:" destination="LVB-YS-i5n" eventType="touchUpInside" id="lJk-KK-xy0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pbo-3p-cUb" firstAttribute="top" secondItem="4JB-kC-zj0" secondAttribute="top" constant="8" id="23j-rK-N59"/>
+                                    <constraint firstItem="39Y-F4-KyJ" firstAttribute="leading" secondItem="4JB-kC-zj0" secondAttribute="leading" constant="8" id="54J-gG-h1f"/>
+                                    <constraint firstAttribute="centerX" secondItem="pbo-3p-cUb" secondAttribute="centerX" id="6Qd-Co-8B5"/>
+                                    <constraint firstAttribute="bottom" secondItem="39Y-F4-KyJ" secondAttribute="bottom" constant="8" id="BgS-PX-t6k"/>
+                                    <constraint firstItem="39Y-F4-KyJ" firstAttribute="top" secondItem="aS6-Nc-ruC" secondAttribute="bottom" constant="40" id="CGN-TU-AIN"/>
+                                    <constraint firstAttribute="trailing" secondItem="39Y-F4-KyJ" secondAttribute="trailing" constant="8" id="DUC-9W-5I0"/>
+                                    <constraint firstItem="Vjd-tV-9rn" firstAttribute="top" secondItem="pbo-3p-cUb" secondAttribute="bottom" constant="8" id="JId-OU-emz"/>
+                                    <constraint firstItem="aS6-Nc-ruC" firstAttribute="height" secondItem="39Y-F4-KyJ" secondAttribute="height" multiplier="0.5" id="Kfh-z9-SZQ"/>
+                                    <constraint firstItem="aS6-Nc-ruC" firstAttribute="top" secondItem="Vjd-tV-9rn" secondAttribute="bottom" constant="8" id="LZR-bV-9Bs"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vjd-tV-9rn" secondAttribute="trailing" constant="8" id="Zdn-9n-2fg"/>
+                                    <constraint firstAttribute="trailing" secondItem="aS6-Nc-ruC" secondAttribute="trailing" constant="8" id="ayo-EB-T4B"/>
+                                    <constraint firstItem="Vjd-tV-9rn" firstAttribute="leading" secondItem="4JB-kC-zj0" secondAttribute="leading" constant="8" id="gMv-GA-aDD"/>
+                                    <constraint firstItem="aS6-Nc-ruC" firstAttribute="height" secondItem="Vjd-tV-9rn" secondAttribute="height" id="rpE-Na-6qX"/>
+                                    <constraint firstItem="aS6-Nc-ruC" firstAttribute="leading" secondItem="4JB-kC-zj0" secondAttribute="leading" constant="8" id="vad-GN-sfh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YkH-Ys-TGM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY FOR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssE-8M-aee">
+                                        <rect key="frame" x="33" y="237" width="308.5" height="87.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="64"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.22352941179999999" green="0.5450980392" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="ssE-8M-aee" secondAttribute="centerX" constant="0.25" id="fel-J0-kc6"/>
+                                    <constraint firstAttribute="bottom" secondItem="ssE-8M-aee" secondAttribute="bottom" constant="8" id="ocu-N1-UQn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4JB-kC-zj0" secondAttribute="trailing" id="0iw-Gr-DO7"/>
+                            <constraint firstAttribute="trailing" secondItem="YkH-Ys-TGM" secondAttribute="trailing" id="1M9-hB-7nM"/>
+                            <constraint firstItem="YkH-Ys-TGM" firstAttribute="height" secondItem="4JB-kC-zj0" secondAttribute="height" id="8nt-MO-LBk"/>
+                            <constraint firstItem="YkH-Ys-TGM" firstAttribute="top" secondItem="PCf-gQ-wO7" secondAttribute="top" id="AGu-L3-e9S"/>
+                            <constraint firstItem="4JB-kC-zj0" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="TcO-OL-1hk"/>
+                            <constraint firstItem="YkH-Ys-TGM" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" id="ewG-Ll-9s6"/>
+                            <constraint firstItem="4JB-kC-zj0" firstAttribute="top" secondItem="YkH-Ys-TGM" secondAttribute="bottom" constant="1" id="f2h-Op-aeO"/>
+                            <constraint firstItem="b3d-qh-BLL" firstAttribute="top" secondItem="4JB-kC-zj0" secondAttribute="bottom" id="lU0-oK-SXi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZFM-YT-Ga8"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="p1PointsSegment" destination="aS6-Nc-ruC" id="4NH-WW-qt1"/>
+                        <outlet property="p1StartButton" destination="39Y-F4-KyJ" id="t3b-2T-hzv"/>
+                        <outlet property="p1TimeSegment" destination="Vjd-tV-9rn" id="qMm-ZE-QTg"/>
+                        <outlet property="p2TopLabel" destination="ssE-8M-aee" id="TZv-rB-3Tx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ebe-D5-y2E">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="m0D-Us-jgG" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ycU-Sf-7mL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LVB-YS-i5n" kind="relationship" relationship="rootViewController" id="VL6-AP-9UU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nkZ-g9-qqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-239" y="230"/>
+        </scene>
+    </scenes>
+</document>
