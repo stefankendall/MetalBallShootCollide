@@ -38,7 +38,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aS6-Nc-ruC">
-                                        <rect key="frame" x="8" y="154.5" width="359" height="44.5"/>
+                                        <rect key="frame" x="8" y="154" width="359" height="44.5"/>
                                         <segments>
                                             <segment title="5 pts"/>
                                             <segment title="∞"/>
@@ -91,11 +91,60 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ymf-SI-sWV">
+                                        <rect key="frame" x="8" y="186" width="359" height="44"/>
+                                        <segments>
+                                            <segment title="2 mins"/>
+                                            <segment title="∞"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="p2TimeChanged:" destination="LVB-YS-i5n" eventType="valueChanged" id="62k-7a-fsY"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tBa-5f-pRL">
+                                        <rect key="frame" x="8" y="134.5" width="359" height="44"/>
+                                        <segments>
+                                            <segment title="5 pts"/>
+                                            <segment title="∞"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="p2PointsChanged:" destination="LVB-YS-i5n" eventType="valueChanged" id="wqS-9j-HQD"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbE-Ff-E96">
+                                        <rect key="frame" x="8" y="8" width="359" height="86.5"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="START!">
+                                            <color key="titleColor" red="0.22352941179999999" green="0.5450980392" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" title="READY!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="p2StartButtonSelected:" destination="LVB-YS-i5n" eventType="touchUpInside" id="Pkd-Xl-PEm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.22352941179999999" green="0.5450980392" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="ssE-8M-aee" secondAttribute="centerX" constant="0.25" id="fel-J0-kc6"/>
+                                    <constraint firstItem="ymf-SI-sWV" firstAttribute="top" secondItem="tBa-5f-pRL" secondAttribute="bottom" constant="8.5" id="4Q2-NC-K62"/>
+                                    <constraint firstItem="SbE-Ff-E96" firstAttribute="top" secondItem="YkH-Ys-TGM" secondAttribute="top" constant="8" id="DkX-ns-69U"/>
+                                    <constraint firstItem="tBa-5f-pRL" firstAttribute="leading" secondItem="YkH-Ys-TGM" secondAttribute="leading" constant="8" id="HRF-Cd-Nl9"/>
+                                    <constraint firstItem="SbE-Ff-E96" firstAttribute="leading" secondItem="YkH-Ys-TGM" secondAttribute="leading" constant="8" id="JDv-vW-l0V"/>
+                                    <constraint firstAttribute="trailing" secondItem="ymf-SI-sWV" secondAttribute="trailing" constant="8" id="TQd-HK-Lw5"/>
+                                    <constraint firstItem="tBa-5f-pRL" firstAttribute="top" secondItem="SbE-Ff-E96" secondAttribute="bottom" constant="40" id="f8r-D2-kJT"/>
+                                    <constraint firstAttribute="centerX" secondItem="ssE-8M-aee" secondAttribute="centerX" id="fel-J0-kc6"/>
+                                    <constraint firstItem="tBa-5f-pRL" firstAttribute="height" secondItem="SbE-Ff-E96" secondAttribute="height" multiplier="0.5" id="ftR-fe-t2j"/>
+                                    <constraint firstAttribute="trailing" secondItem="tBa-5f-pRL" secondAttribute="trailing" constant="8" id="hDW-mC-Q01"/>
+                                    <constraint firstAttribute="trailing" secondItem="SbE-Ff-E96" secondAttribute="trailing" constant="8" id="jmD-qc-Uhb"/>
+                                    <constraint firstItem="tBa-5f-pRL" firstAttribute="height" secondItem="ymf-SI-sWV" secondAttribute="height" id="liN-fT-ILc"/>
                                     <constraint firstAttribute="bottom" secondItem="ssE-8M-aee" secondAttribute="bottom" constant="8" id="ocu-N1-UQn"/>
+                                    <constraint firstItem="ssE-8M-aee" firstAttribute="top" secondItem="ymf-SI-sWV" secondAttribute="bottom" constant="8" id="vfF-Sz-MqM"/>
+                                    <constraint firstItem="ymf-SI-sWV" firstAttribute="leading" secondItem="YkH-Ys-TGM" secondAttribute="leading" constant="8" id="xLP-dW-AWL"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -116,6 +165,9 @@
                         <outlet property="p1PointsSegment" destination="aS6-Nc-ruC" id="4NH-WW-qt1"/>
                         <outlet property="p1StartButton" destination="39Y-F4-KyJ" id="t3b-2T-hzv"/>
                         <outlet property="p1TimeSegment" destination="Vjd-tV-9rn" id="qMm-ZE-QTg"/>
+                        <outlet property="p2PointsSegment" destination="tBa-5f-pRL" id="qar-rN-sf5"/>
+                        <outlet property="p2StartButton" destination="SbE-Ff-E96" id="D52-uA-ucB"/>
+                        <outlet property="p2TimeSegment" destination="ymf-SI-sWV" id="brG-xJ-oEl"/>
                         <outlet property="p2TopLabel" destination="ssE-8M-aee" id="TZv-rB-3Tx"/>
                     </connections>
                 </viewController>

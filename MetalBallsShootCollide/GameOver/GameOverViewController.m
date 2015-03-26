@@ -22,7 +22,7 @@
     [self.p2RematchButton setTitle:@"READY!" forState:UIControlStateSelected];
 }
 
--(BOOL)prefersStatusBarHidden{
+- (BOOL)prefersStatusBarHidden {
     return YES;
 }
 
@@ -42,8 +42,10 @@
 
 - (void)checkForRematch {
     if (self.p1RematchButton.selected && self.p2RematchButton.selected) {
-        [self.delegate rematch];
-        [self dismissViewControllerAnimated:YES completion:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1), dispatch_get_main_queue(), ^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+            [self.delegate rematch];
+        });
     }
 }
 
