@@ -13,13 +13,22 @@
     self.backgroundColor = [UIColor whiteColor];
     self.shootInterval = 0.15;
     self.scoreToWin = 15;
-    self.scoreToWin = 1;
+    self.scoreToWin = 5;
     self.targetRespawnTimeInSeconds = 1;
 
     self.physicsWorld.gravity = CGVectorMake(0, 0);
     self.physicsWorld.contactDelegate = self;
 
     self.targetExplodeHeightFromEdge = 60;
+
+    [self startGame];
+}
+
+- (void)startGame {
+    self.gameOver = NO;
+    for (SKNode *node in self.children) {
+        [node removeFromParent];
+    }
 
     SKNode *level = [LevelBackgroundNode levelForScene:self];
     level.name = @"level";

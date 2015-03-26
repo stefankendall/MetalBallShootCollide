@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <SpriteKit/SpriteKit.h>
 #import "GameOverDelegate.h"
+#import "GameOverViewDelegate.h"
 
-@interface GameViewController : UIViewController <GameOverDelegate>
+@class GameScene;
 
+@interface GameViewController : UIViewController <GameOverDelegate, GameOverViewDelegate>
+
+@property(nonatomic, strong) GameScene *scene;
 @end

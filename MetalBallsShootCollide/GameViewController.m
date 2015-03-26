@@ -1,4 +1,3 @@
-
 #import "GameViewController.h"
 #import "GameScene.h"
 #import "ShooterNode.h"
@@ -15,7 +14,7 @@
     [arch setClass:self forClassName:@"SKScene"];
     SKScene *scene = [arch decodeObjectForKey:NSKeyedArchiveRootObjectKey];
     [arch finishDecoding];
-    
+
     return scene;
 }
 
@@ -23,21 +22,20 @@
 
 @implementation GameViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 
-    SKView * skView = (SKView *)self.view;
+    SKView *skView = (SKView *) self.view;
 //    skView.showsFPS = YES;
 //    skView.showsNodeCount = YES;
     skView.ignoresSiblingOrder = YES;
 //    skView.showsPhysics = YES;
-    
-    GameScene *scene = [[GameScene alloc] initWithSize:self.view.frame.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
-    scene.gameOverDelegate = self;
-    
-    [skView presentScene:scene];
+
+    self.scene = [[GameScene alloc] initWithSize:self.view.frame.size];
+    self.scene.scaleMode = SKSceneScaleModeAspectFill;
+    self.scene.gameOverDelegate = self;
+
+    [skView presentScene:self.scene];
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -47,7 +45,13 @@
 - (void)gameOverByVictory:(enum Player)player {
     GameOverViewController *controller = [[UIStoryboard storyboardWithName:@"GameOverViewController" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
     controller.winner = player;
+    controller.delegate = self;
     [self presentViewController:controller animated:YES completion:nil];
 }
+
+- (void)rematch {
+    [self.scene startGame];
+}
+
 
 @end

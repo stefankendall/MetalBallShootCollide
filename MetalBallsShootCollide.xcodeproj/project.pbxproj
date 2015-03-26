@@ -60,6 +60,7 @@
 		5459027911B7974A5C590CCA /* PlayerEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerEnum.h; sourceTree = "<group>"; };
 		5459034F753FD70D04EB4303 /* short_explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_explosion.mp3; sourceTree = "<group>"; };
 		5459036A68F655B93CE50A57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		5459045AA68F0B2C689BC05C /* GameOverViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewDelegate.h; sourceTree = "<group>"; };
 		545904702C600889242FBD11 /* p2ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2ball@2x.png"; sourceTree = "<group>"; };
 		5459052A126DCBAA603B4368 /* MetalBallsShootCollide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBallsShootCollide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleTargetNode.m; sourceTree = "<group>"; };
@@ -224,6 +225,7 @@
 				54590C72144DBC939A26BB38 /* GameOverViewController.storyboard */,
 				545907154B4352869016EE85 /* GameOverViewController.m */,
 				545908BBF46B7ABCF3125A46 /* GameOverViewController.h */,
+				5459045AA68F0B2C689BC05C /* GameOverViewDelegate.h */,
 			);
 			path = GameOver;
 			sourceTree = "<group>";
