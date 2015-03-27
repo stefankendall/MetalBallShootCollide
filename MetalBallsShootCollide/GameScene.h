@@ -13,9 +13,12 @@
 
 @property(nonatomic) BOOL gameOver;
 
-@property(nonatomic) int scoreToWin;
+
 @property(nonatomic, strong) id <GameOverDelegate> gameOverDelegate;
 @property(nonatomic) NSTimeInterval targetRespawnTimeInSeconds;
+
+@property(nonatomic, strong) NSNumber *timeLimitMinutes;
+@property(nonatomic, strong) NSNumber *pointsToWin;
 
 - (void)startGame;
 @end

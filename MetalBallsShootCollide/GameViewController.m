@@ -34,6 +34,8 @@
     self.scene = [[GameScene alloc] initWithSize:self.view.frame.size];
     self.scene.scaleMode = SKSceneScaleModeAspectFill;
     self.scene.gameOverDelegate = self;
+    self.scene.pointsToWin = self.pointsToWin;
+    self.scene.timeLimitMinutes = self.timeLimitMinutes;
 
     [skView presentScene:self.scene];
 }

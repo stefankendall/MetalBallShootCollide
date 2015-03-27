@@ -6,14 +6,13 @@
 #import "CountdownNode.h"
 #import "ScoreNode.h"
 #import "GameOverDelegate.h"
+#import "RulesNode.h"
 
 @implementation GameScene
 
 - (void)didMoveToView:(SKView *)view {
     self.backgroundColor = [UIColor whiteColor];
     self.shootInterval = 0.15;
-    self.scoreToWin = 15;
-    self.scoreToWin = 1;
     self.targetRespawnTimeInSeconds = 1;
 
     self.physicsWorld.gravity = CGVectorMake(0, 0);
@@ -56,6 +55,9 @@
         [self addTargetAtPosition:(int) (self.size.width / 2) fadeInDelaySeconds:0];
     }];
     [level addChild:countdownNode];
+
+    [level addChild:[RulesNode rulesIn:self player:Player1]];
+    [level addChild:[RulesNode rulesIn:self player:Player2]];
 }
 
 - (void)addTargetAtPosition:(int)x fadeInDelaySeconds:(float)seconds {
@@ -164,7 +166,7 @@
 
                 [playerScore setScore:playerScore.score + target.value];
 
-                if (playerScore.score >= self.scoreToWin) {
+                if (self.pointsToWin && playerScore.score >= [self.pointsToWin intValue]) {
                     self.gameOver = YES;
                     [self.gameOverDelegate gameOverByVictory:playerScore.player];
                     return;

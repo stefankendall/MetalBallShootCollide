@@ -27,9 +27,10 @@
 		5459089DA0738AC1F2A2793A /* short_beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54590D4E0B28031FFAAC4DB8 /* short_beep.mp3 */; };
 		545908AE25086F5D9D9E32E6 /* TriangleTargetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */; };
 		54590920CBFA05A2969A41AC /* p1ball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545909C6235944D3B1D9C380 /* p1ball@2x.png */; };
+		54590969525EAC0566AE97B7 /* RulesNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590222E262F86D61157375 /* RulesNode.m */; };
 		545909A4A56B7CED6AB02329 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 545909B77EEB2BFF0D5F7AA9 /* AppDelegate.m */; };
+		545909C5EF422308227E81FE /* CountdownNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459062EB163D910E5E24BD7 /* CountdownNode.m */; };
 		545909CE56F7C8365E7382B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900FF2046079DEC2A2638 /* main.m */; };
-		54590B488FDAE23BBCF421F1 /* CountdownNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590AB43C6BA5EC1A569C9E /* CountdownNode.m */; };
 		54590B5DF8093553E091AA1E /* short_explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5459034F753FD70D04EB4303 /* short_explosion.mp3 */; };
 		54590CC9F8EB35B81419537D /* shoot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 54590FB336F98440BDFFCFCD /* shoot.wav */; };
 		54590D9F619270CC45B0604C /* go.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54590B3A1382A983776A1300 /* go.mp3 */; };
@@ -59,6 +60,7 @@
 		54590094B575EFA800DA8552 /* TargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetNode.m; sourceTree = "<group>"; };
 		545900FF2046079DEC2A2638 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		545901CB18EA1A098E819E8D /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		54590222E262F86D61157375 /* RulesNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulesNode.m; sourceTree = "<group>"; };
 		5459027911B7974A5C590CCA /* PlayerEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerEnum.h; sourceTree = "<group>"; };
 		5459034F753FD70D04EB4303 /* short_explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_explosion.mp3; sourceTree = "<group>"; };
 		5459036A68F655B93CE50A57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +68,8 @@
 		545904702C600889242FBD11 /* p2ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2ball@2x.png"; sourceTree = "<group>"; };
 		5459052A126DCBAA603B4368 /* MetalBallsShootCollide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBallsShootCollide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleTargetNode.m; sourceTree = "<group>"; };
+		5459061D171CE0CE06235327 /* RulesNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulesNode.h; sourceTree = "<group>"; };
+		5459062EB163D910E5E24BD7 /* CountdownNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownNode.m; sourceTree = "<group>"; };
 		5459066A0262F453DC694B1C /* ScoreNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreNode.m; sourceTree = "<group>"; };
 		545906A4AC61EF97533E9BF4 /* UIImage+ColorFromImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorFromImage.h"; sourceTree = "<group>"; };
 		545906AA55E0FB92D7514C65 /* BallNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallNode.m; sourceTree = "<group>"; };
@@ -82,8 +86,8 @@
 		545909B77EEB2BFF0D5F7AA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		545909C6235944D3B1D9C380 /* p1ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p1ball@2x.png"; sourceTree = "<group>"; };
 		545909FD2A38C83F8185F385 /* MetalBallsShootCollideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalBallsShootCollideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54590A1D34E5D4A48BF4051A /* CountdownNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownNode.h; sourceTree = "<group>"; };
 		54590A7FAA0D6E847EDFDB7C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		54590AB43C6BA5EC1A569C9E /* CountdownNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownNode.m; sourceTree = "<group>"; };
 		54590B2965ABEE3A0CE4AD93 /* LevelBackgroundNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelBackgroundNode.m; sourceTree = "<group>"; };
 		54590B3A1382A983776A1300 /* go.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = go.mp3; sourceTree = "<group>"; };
 		54590B88914A599B0720055B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -98,7 +102,6 @@
 		54590D4E0B28031FFAAC4DB8 /* short_beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_beep.mp3; sourceTree = "<group>"; };
 		54590DB0B0F0A8E00DCDEE8B /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		54590E0DBA265572974476F6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		54590EA2B75E46E86984D746 /* CountdownNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownNode.h; sourceTree = "<group>"; };
 		54590F9CC91E6A68BC80BD31 /* ShooterNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShooterNode.h; sourceTree = "<group>"; };
 		54590FB336F98440BDFFCFCD /* shoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shoot.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +131,17 @@
 				5459064DE1687B655C4399BE /* MetalBallsShootCollide */,
 				5459064981428EC132FF7B3E /* MetalBallsShootCollideTests */,
 			);
+			sourceTree = "<group>";
+		};
+		54590408F7D65B7AC5F19F23 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				54590A1D34E5D4A48BF4051A /* CountdownNode.h */,
+				5459062EB163D910E5E24BD7 /* CountdownNode.m */,
+				54590222E262F86D61157375 /* RulesNode.m */,
+				5459061D171CE0CE06235327 /* RulesNode.h */,
+			);
+			path = Start;
 			sourceTree = "<group>";
 		};
 		5459041E375B8C6555883FD0 /* Supporting Files */ = {
@@ -214,14 +228,13 @@
 				5459086E900DE0082FD8E883 /* BallNode.h */,
 				54590CD07D35FFB217397F0C /* LevelBackgroundNode.h */,
 				54590B2965ABEE3A0CE4AD93 /* LevelBackgroundNode.m */,
-				54590AB43C6BA5EC1A569C9E /* CountdownNode.m */,
-				54590EA2B75E46E86984D746 /* CountdownNode.h */,
 				024E08D31AB63AD60001B913 /* explosion.sks */,
 				024E08D41AB63AD60001B913 /* spark.png */,
 				5459004186AA08B88C2CB07B /* ScoreNode.h */,
 				5459066A0262F453DC694B1C /* ScoreNode.m */,
 				54590094B575EFA800DA8552 /* TargetNode.m */,
 				5459070281355832564F94B6 /* TargetNode.h */,
+				54590408F7D65B7AC5F19F23 /* Start */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -388,12 +401,13 @@
 				545903EBEE232CBF7F940026 /* ShooterNode.m in Sources */,
 				545906D1A741D5B907EE07C6 /* LevelBackgroundNode.m in Sources */,
 				54590864C036B2CCC9E6842C /* SKEmitterNode+HelperExtensions.m in Sources */,
-				54590B488FDAE23BBCF421F1 /* CountdownNode.m in Sources */,
 				5459005A01704ADD3D6C2A45 /* ScoreNode.m in Sources */,
 				5459070DC79F6DFB9026F4F7 /* TargetNode.m in Sources */,
 				54590E16A6B3776B333CFA43 /* GameOverViewController.m in Sources */,
 				54590080D316FE13E9DD5EFD /* UIImage+ColorFromImage.m in Sources */,
 				545907E241E5F327E5D3EC7F /* MenuViewController.m in Sources */,
+				545909C5EF422308227E81FE /* CountdownNode.m in Sources */,
+				54590969525EAC0566AE97B7 /* RulesNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
