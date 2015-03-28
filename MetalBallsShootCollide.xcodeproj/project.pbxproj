@@ -19,6 +19,7 @@
 		545902C5CF008E57298B40D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54590D27DA64855650F0718C /* Images.xcassets */; };
 		545902D42E730F7A1432C22B /* BallNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 545906AA55E0FB92D7514C65 /* BallNode.m */; };
 		545903EBEE232CBF7F940026 /* ShooterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459002BB5A5230D20F08BF0 /* ShooterNode.m */; };
+		5459046243BD158CFF80DB23 /* siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5459062ED4857F2A680C2F1C /* siren.mp3 */; };
 		545905EE0DFE242F64FBD20B /* GameOverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54590C72144DBC939A26BB38 /* GameOverViewController.storyboard */; };
 		54590600CACC3ECFFD231713 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590C46E6024176FA0CA422 /* LaunchScreen.xib */; };
 		545906D1A741D5B907EE07C6 /* LevelBackgroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B2965ABEE3A0CE4AD93 /* LevelBackgroundNode.m */; };
@@ -77,6 +78,7 @@
 		545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleTargetNode.m; sourceTree = "<group>"; };
 		5459061D171CE0CE06235327 /* RulesNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulesNode.h; sourceTree = "<group>"; };
 		5459062EB163D910E5E24BD7 /* CountdownNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownNode.m; sourceTree = "<group>"; };
+		5459062ED4857F2A680C2F1C /* siren.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = siren.mp3; sourceTree = "<group>"; };
 		5459066A0262F453DC694B1C /* ScoreNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreNode.m; sourceTree = "<group>"; };
 		545906A4AC61EF97533E9BF4 /* UIImage+ColorFromImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorFromImage.h"; sourceTree = "<group>"; };
 		545906AA55E0FB92D7514C65 /* BallNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallNode.m; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				54590D4E0B28031FFAAC4DB8 /* short_beep.mp3 */,
 				54590B3A1382A983776A1300 /* go.mp3 */,
 				54590FB336F98440BDFFCFCD /* shoot.wav */,
+				5459062ED4857F2A680C2F1C /* siren.mp3 */,
 			);
 			path = sounds;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				54590CC9F8EB35B81419537D /* shoot.wav in Resources */,
 				545905EE0DFE242F64FBD20B /* GameOverViewController.storyboard in Resources */,
 				54590109BDFC78F06E187F4D /* MenuViewController.storyboard in Resources */,
+				5459046243BD158CFF80DB23 /* siren.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
