@@ -49,12 +49,21 @@
     shooter2.name = @"shooter2";
     [level addChild:shooter2];
 
-    CountdownNode *countdownNode = (CountdownNode *) [CountdownNode countdownNode];
-    countdownNode.position = CGPointMake(self.size.width / 2, self.size.height / 2);
-    [countdownNode countToZero:^{
-        [self addTargetAtPosition:(int) (self.size.width / 2) fadeInDelaySeconds:0];
+    CountdownNode *countdownNodePlayer1 = (CountdownNode *) [CountdownNode countdownNodeForPlayer:Player1];
+    CGFloat positionX1 = self.size.width / 4;
+    countdownNodePlayer1.position = CGPointMake(positionX1, self.size.height / 2);
+    [countdownNodePlayer1 countToZero:^{
+        [self addTargetAtPosition:(int) positionX1 fadeInDelaySeconds:0];
     }];
-    [level addChild:countdownNode];
+    [level addChild:countdownNodePlayer1];
+
+    CGFloat positionX2 = 3 * self.size.width / 4;
+    CountdownNode *countdownNodePlayer2 = (CountdownNode *) [CountdownNode countdownNodeForPlayer:Player2];
+    countdownNodePlayer2.position = CGPointMake(positionX2, self.size.height / 2);
+    [countdownNodePlayer2 countToZero:^{
+        [self addTargetAtPosition:(int) positionX2 fadeInDelaySeconds:0];
+    }];
+    [level addChild:countdownNodePlayer2];
 
     [level addChild:[RulesNode rulesIn:self player:Player1]];
     [level addChild:[RulesNode rulesIn:self player:Player2]];

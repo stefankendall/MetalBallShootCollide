@@ -1,8 +1,9 @@
 #import "CountdownNode.h"
+#import "PlayerEnum.h"
 
 @implementation CountdownNode
 
-+ (SKNode *)countdownNode {
++ (SKNode *)countdownNodeForPlayer:(enum Player)player {
     CountdownNode *node = [self node];
     node.zPosition = 2;
 
@@ -18,6 +19,11 @@
     [text setFontSize:96];
     [text setName:@"text"];
     [text setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
+
+    if (player == Player2) {
+        [text setXScale:-1];
+        [text setYScale:-1];
+    }
 
     [node addChild:text];
     return node;

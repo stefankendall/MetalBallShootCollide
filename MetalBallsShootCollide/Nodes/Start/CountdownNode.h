@@ -4,7 +4,7 @@
 
 @interface CountdownNode : SKNode
 
-+ (SKNode *) countdownNode;
++ (SKNode *)countdownNodeForPlayer: (enum Player) player;
 
 - (void)countToZero:(void (^)())pFunction;
 @end
