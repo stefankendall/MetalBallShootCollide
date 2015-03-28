@@ -148,8 +148,8 @@
 }
 
 - (void)update:(CFTimeInterval)currentTime {
-    TriangleTargetNode *target = (TriangleTargetNode *) [self childNodeWithName:@"//target"];
-    if (target != nil) {
+    [self enumerateChildNodesWithName:@"//target" usingBlock:^(SKNode *node, BOOL *stop) {
+        TriangleTargetNode *target = (TriangleTargetNode *) node;
         if (target.position.y < self.targetExplodeHeightFromEdge ||
                 target.position.y > self.size.height - self.targetExplodeHeightFromEdge
                 ) {
@@ -178,7 +178,7 @@
                 ]]];
             }
         }
-    }
+    }];
 }
 
 - (void)respawnTriangle {
