@@ -20,5 +20,7 @@
 @property(nonatomic, strong) NSNumber *timeLimitMinutes;
 @property(nonatomic, strong) NSNumber *pointsToWin;
 
+@property(nonatomic) BOOL nextPointWins;
+
 - (void)startGame;
 @end

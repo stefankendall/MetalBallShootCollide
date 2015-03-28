@@ -6,6 +6,9 @@
 
 @class GameScene;
 
+extern const int TEXT_HPAD;
+extern const int TEXT_VPAD;
+
 @interface ScoreNode : SKNode
 
 @property(nonatomic) int score;

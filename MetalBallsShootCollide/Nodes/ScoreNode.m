@@ -2,6 +2,9 @@
 #import "GameScene.h"
 #import "PlayerEnum.h"
 
+const int TEXT_VPAD = 10;
+const int TEXT_HPAD = 20;
+
 @implementation ScoreNode
 
 - (void)setScore:(int)score {
@@ -15,9 +18,6 @@
     ScoreNode *node = [self node];
     node.player = player;
 
-    int vPad = 10;
-    int hPad = 20;
-
     SKLabelNode *label = [SKLabelNode labelNodeWithFontNamed:@"Avenir-Black"];
     [node addChild:label];
     label.name = @"score";
@@ -29,10 +29,10 @@
     label.verticalAlignmentMode = SKLabelVerticalAlignmentModeBottom;
 
     if (player == Player1) {
-        node.position = CGPointMake(hPad, vPad);
+        node.position = CGPointMake(TEXT_HPAD, TEXT_VPAD);
     }
     else {
-        node.position = CGPointMake(scene.frame.size.width - hPad, scene.frame.size.height - vPad);
+        node.position = CGPointMake(scene.frame.size.width - TEXT_HPAD, scene.frame.size.height - TEXT_VPAD);
         [label setYScale:-1];
         [label setXScale:-1];
     }

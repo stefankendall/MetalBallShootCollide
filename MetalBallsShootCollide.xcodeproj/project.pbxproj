@@ -23,6 +23,8 @@
 		54590600CACC3ECFFD231713 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590C46E6024176FA0CA422 /* LaunchScreen.xib */; };
 		545906D1A741D5B907EE07C6 /* LevelBackgroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B2965ABEE3A0CE4AD93 /* LevelBackgroundNode.m */; };
 		5459070DC79F6DFB9026F4F7 /* TargetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590094B575EFA800DA8552 /* TargetNode.m */; };
+		54590722E4D33346BBBBC1CC /* NextPointWins.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904A7526DAB2BD3746A39 /* NextPointWins.m */; };
+		545907DA961EE31A8906FB61 /* TimerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FCB986C1577A37789AD /* TimerNode.m */; };
 		545907E241E5F327E5D3EC7F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E0DBA265572974476F6 /* MenuViewController.m */; };
 		54590864C036B2CCC9E6842C /* SKEmitterNode+HelperExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CF692AF5D8B87524D82 /* SKEmitterNode+HelperExtensions.m */; };
 		5459089DA0738AC1F2A2793A /* short_beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54590D4E0B28031FFAAC4DB8 /* short_beep.mp3 */; };
@@ -61,13 +63,16 @@
 		54590047F9F179A2A91CADA7 /* SKEmitterNode+HelperExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+HelperExtensions.h"; sourceTree = "<group>"; };
 		54590094B575EFA800DA8552 /* TargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetNode.m; sourceTree = "<group>"; };
 		545900FF2046079DEC2A2638 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		54590113EBBAB12304051801 /* NextPointWins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextPointWins.h; sourceTree = "<group>"; };
 		545901CB18EA1A098E819E8D /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		54590222E262F86D61157375 /* RulesNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RulesNode.m; sourceTree = "<group>"; };
 		5459027911B7974A5C590CCA /* PlayerEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerEnum.h; sourceTree = "<group>"; };
+		545902EC26AF5A9333D023E7 /* TimerNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerNode.h; sourceTree = "<group>"; };
 		5459034F753FD70D04EB4303 /* short_explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_explosion.mp3; sourceTree = "<group>"; };
 		5459036A68F655B93CE50A57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5459045AA68F0B2C689BC05C /* GameOverViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewDelegate.h; sourceTree = "<group>"; };
 		545904702C600889242FBD11 /* p2ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2ball@2x.png"; sourceTree = "<group>"; };
+		545904A7526DAB2BD3746A39 /* NextPointWins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextPointWins.m; sourceTree = "<group>"; };
 		5459052A126DCBAA603B4368 /* MetalBallsShootCollide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBallsShootCollide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleTargetNode.m; sourceTree = "<group>"; };
 		5459061D171CE0CE06235327 /* RulesNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulesNode.h; sourceTree = "<group>"; };
@@ -106,6 +111,7 @@
 		54590E0DBA265572974476F6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		54590F9CC91E6A68BC80BD31 /* ShooterNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShooterNode.h; sourceTree = "<group>"; };
 		54590FB336F98440BDFFCFCD /* shoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shoot.wav; sourceTree = "<group>"; };
+		54590FCB986C1577A37789AD /* TimerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +243,10 @@
 				54590094B575EFA800DA8552 /* TargetNode.m */,
 				5459070281355832564F94B6 /* TargetNode.h */,
 				54590408F7D65B7AC5F19F23 /* Start */,
+				54590FCB986C1577A37789AD /* TimerNode.m */,
+				545902EC26AF5A9333D023E7 /* TimerNode.h */,
+				545904A7526DAB2BD3746A39 /* NextPointWins.m */,
+				54590113EBBAB12304051801 /* NextPointWins.h */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -412,6 +422,8 @@
 				545907E241E5F327E5D3EC7F /* MenuViewController.m in Sources */,
 				545909C5EF422308227E81FE /* CountdownNode.m in Sources */,
 				54590969525EAC0566AE97B7 /* RulesNode.m in Sources */,
+				545907DA961EE31A8906FB61 /* TimerNode.m in Sources */,
+				54590722E4D33346BBBBC1CC /* NextPointWins.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

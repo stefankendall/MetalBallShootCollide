@@ -7,6 +7,8 @@
 #import "ScoreNode.h"
 #import "GameOverDelegate.h"
 #import "RulesNode.h"
+#import "TimerNode.h"
+#import "NextPointWins.h"
 
 @implementation GameScene
 
@@ -25,9 +27,8 @@
 
 - (void)startGame {
     self.gameOver = NO;
-    for (SKNode *node in self.children) {
-        [node removeFromParent];
-    }
+    [self removeAllChildren];
+    [self removeAllActions];
 
     SKNode *level = [LevelBackgroundNode levelForScene:self];
     level.name = @"level";
@@ -52,8 +53,24 @@
     CountdownNode *countdownNodePlayer1 = (CountdownNode *) [CountdownNode countdownNodeForPlayer:Player1];
     CGFloat positionX1 = self.size.width / 4;
     countdownNodePlayer1.position = CGPointMake(positionX1, self.size.height / 2);
+    NSNumber *timeLimitSeconds = self.timeLimitMinutes ? @(self.timeLimitMinutes.intValue * 60) : nil;
+//    NSNumber *timeLimitSeconds = @(2);
     [countdownNodePlayer1 countToZero:^{
         [self addTargetAtPosition:(int) positionX1 fadeInDelaySeconds:0];
+        if (timeLimitSeconds) {
+            TimerNode *timer1 = [TimerNode timerForPlayer:Player1 inScene:self withTime:timeLimitSeconds];
+            timer1.name = @"timer";
+            [self addChild:timer1];
+            TimerNode *timer2 = [TimerNode timerForPlayer:Player2 inScene:self withTime:timeLimitSeconds];
+            timer2.name = @"timer";
+            [self addChild:timer2];
+            [self runAction:[SKAction sequence:@[
+                    [SKAction waitForDuration:[timeLimitSeconds intValue]],
+                    [SKAction runBlock:^{
+                        [self timeLimitReached];
+                    }]
+            ]]];
+        }
     }];
     [level addChild:countdownNodePlayer1];
 
@@ -67,6 +84,25 @@
 
     [level addChild:[RulesNode rulesIn:self player:Player1]];
     [level addChild:[RulesNode rulesIn:self player:Player2]];
+}
+
+- (void)timeLimitReached {
+    ScoreNode *score1 = (ScoreNode *) [self childNodeWithName:@"//score1"];
+    ScoreNode *score2 = (ScoreNode *) [self childNodeWithName:@"//score2"];
+    if (!self.gameOver) {
+        if (score1.score != score2.score) {
+            self.gameOver = YES;
+            [self.gameOverDelegate gameOverByVictory:score1.score > score2.score ? Player1 : Player2];
+        }
+        else {
+            [self enumerateChildNodesWithName:@"//timer" usingBlock:^(SKNode *node, BOOL *stop) {
+                [node removeFromParent];
+            }];
+            self.nextPointWins = YES;
+            LevelBackgroundNode *level = (LevelBackgroundNode *) [self childNodeWithName:@"level"];
+            [level addChild:[NextPointWins nextPointWinsInScene:self]];
+        }
+    }
 }
 
 - (void)addTargetAtPosition:(int)x fadeInDelaySeconds:(float)seconds {
@@ -175,7 +211,7 @@
 
                 [playerScore setScore:playerScore.score + target.value];
 
-                if (self.pointsToWin && playerScore.score >= [self.pointsToWin intValue]) {
+                if ((self.pointsToWin && playerScore.score >= [self.pointsToWin intValue]) || self.nextPointWins) {
                     self.gameOver = YES;
                     [self.gameOverDelegate gameOverByVictory:playerScore.player];
                     return;
