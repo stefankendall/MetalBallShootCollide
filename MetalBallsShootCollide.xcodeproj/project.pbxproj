@@ -75,7 +75,7 @@
 		5459045AA68F0B2C689BC05C /* GameOverViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewDelegate.h; sourceTree = "<group>"; };
 		545904702C600889242FBD11 /* p2ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2ball@2x.png"; sourceTree = "<group>"; };
 		545904A7526DAB2BD3746A39 /* NextPointWins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextPointWins.m; sourceTree = "<group>"; };
-		5459052A126DCBAA603B4368 /* MetalBallsShootCollide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalBallsShootCollide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5459052A126DCBAA603B4368 /* Ball Hit Target.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ball Hit Target.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangleTargetNode.m; sourceTree = "<group>"; };
 		5459061D171CE0CE06235327 /* RulesNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RulesNode.h; sourceTree = "<group>"; };
 		5459062EB163D910E5E24BD7 /* CountdownNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownNode.m; sourceTree = "<group>"; };
@@ -282,7 +282,7 @@
 		54590C70C3E8FB3A11FF8BB7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5459052A126DCBAA603B4368 /* MetalBallsShootCollide.app */,
+				5459052A126DCBAA603B4368 /* Ball Hit Target.app */,
 				545909FD2A38C83F8185F385 /* MetalBallsShootCollideTests.xctest */,
 			);
 			name = Products;
@@ -317,7 +317,7 @@
 			);
 			name = MetalBallsShootCollide;
 			productName = MetalBallsShootCollide;
-			productReference = 5459052A126DCBAA603B4368 /* MetalBallsShootCollide.app */;
+			productReference = 5459052A126DCBAA603B4368 /* Ball Hit Target.app */;
 			productType = "com.apple.product-type.application";
 		};
 		54590A7AB74447BF283EF0CD /* MetalBallsShootCollideTests */ = {
@@ -476,7 +476,7 @@
 				INFOPLIST_FILE = MetalBallsShootCollide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ball Hit Target";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -597,7 +597,7 @@
 				INFOPLIST_FILE = MetalBallsShootCollide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Ball Hit Target";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
