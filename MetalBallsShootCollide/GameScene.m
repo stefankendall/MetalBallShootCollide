@@ -53,8 +53,7 @@
     CountdownNode *countdownNodePlayer1 = (CountdownNode *) [CountdownNode countdownNodeForPlayer:Player1];
     CGFloat positionX1 = self.size.width / 4;
     countdownNodePlayer1.position = CGPointMake(positionX1, self.size.height / 2);
-//    NSNumber *timeLimitSeconds = self.timeLimitMinutes ? @(self.timeLimitMinutes.intValue * 60) : nil;
-    NSNumber *timeLimitSeconds = @5;
+    NSNumber *timeLimitSeconds = self.timeLimitMinutes ? @(self.timeLimitMinutes.intValue * 60) : nil;
     [countdownNodePlayer1 countToZero:^{
         [self addTargetAtPosition:(int) positionX1 fadeInDelaySeconds:0];
         if (timeLimitSeconds) {
