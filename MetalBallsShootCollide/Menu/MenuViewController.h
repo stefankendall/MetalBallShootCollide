@@ -1,7 +1,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface MenuViewController : UIViewController {}
+@interface MenuViewController : UIViewController <MFMailComposeViewControllerDelegate> {}
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *p1TimeSegment;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *p2TimeSegment;

@@ -27,6 +27,7 @@
 		54590722E4D33346BBBBC1CC /* NextPointWins.m in Sources */ = {isa = PBXBuildFile; fileRef = 545904A7526DAB2BD3746A39 /* NextPointWins.m */; };
 		545907DA961EE31A8906FB61 /* TimerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FCB986C1577A37789AD /* TimerNode.m */; };
 		545907E241E5F327E5D3EC7F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E0DBA265572974476F6 /* MenuViewController.m */; };
+		545907EE8F49C6DCA20B0C75 /* Mailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 545908256B8AD0FDBA90CF0D /* Mailer.m */; };
 		54590864C036B2CCC9E6842C /* SKEmitterNode+HelperExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CF692AF5D8B87524D82 /* SKEmitterNode+HelperExtensions.m */; };
 		5459089DA0738AC1F2A2793A /* short_beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54590D4E0B28031FFAAC4DB8 /* short_beep.mp3 */; };
 		545908AE25086F5D9D9E32E6 /* TriangleTargetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */; };
@@ -88,6 +89,7 @@
 		5459074AA17E8C2570E5EBC5 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		545907615617A06DBBB791C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		545907EB9F391968CDE5C642 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		545908256B8AD0FDBA90CF0D /* Mailer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mailer.m; sourceTree = "<group>"; };
 		5459086E900DE0082FD8E883 /* BallNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallNode.h; sourceTree = "<group>"; };
 		545908BBF46B7ABCF3125A46 /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
 		545908F56AE2709B578FDE2C /* UIImage+ColorFromImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorFromImage.m"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		54590D4E0B28031FFAAC4DB8 /* short_beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_beep.mp3; sourceTree = "<group>"; };
 		54590DB0B0F0A8E00DCDEE8B /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		54590E0DBA265572974476F6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		54590E9C9395D39E25FF7C6F /* Mailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mailer.h; sourceTree = "<group>"; };
 		54590F9CC91E6A68BC80BD31 /* ShooterNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShooterNode.h; sourceTree = "<group>"; };
 		54590FB336F98440BDFFCFCD /* shoot.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shoot.wav; sourceTree = "<group>"; };
 		54590FCB986C1577A37789AD /* TimerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerNode.m; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 				54590DB0B0F0A8E00DCDEE8B /* MenuViewController.storyboard */,
 				54590E0DBA265572974476F6 /* MenuViewController.m */,
 				54590A7FAA0D6E847EDFDB7C /* MenuViewController.h */,
+				545908256B8AD0FDBA90CF0D /* Mailer.m */,
+				54590E9C9395D39E25FF7C6F /* Mailer.h */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -428,6 +433,7 @@
 				54590969525EAC0566AE97B7 /* RulesNode.m in Sources */,
 				545907DA961EE31A8906FB61 /* TimerNode.m in Sources */,
 				54590722E4D33346BBBBC1CC /* NextPointWins.m in Sources */,
+				545907EE8F49C6DCA20B0C75 /* Mailer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

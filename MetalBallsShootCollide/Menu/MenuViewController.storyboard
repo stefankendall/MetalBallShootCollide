@@ -21,13 +21,13 @@
                                 <rect key="frame" x="0.0" y="334" width="375" height="333"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY FOR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbo-3p-cUb">
-                                        <rect key="frame" x="33" y="8" width="308.5" height="87.5"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="64"/>
+                                        <rect key="frame" x="8" y="8" width="231.5" height="66"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="48"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vjd-tV-9rn">
-                                        <rect key="frame" x="8" y="103" width="359" height="44.5"/>
+                                        <rect key="frame" x="8" y="82" width="359" height="49.5"/>
                                         <segments>
                                             <segment title="2 mins"/>
                                             <segment title="∞"/>
@@ -38,7 +38,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aS6-Nc-ruC">
-                                        <rect key="frame" x="8" y="154" width="359" height="44.5"/>
+                                        <rect key="frame" x="8" y="139" width="359" height="49.5"/>
                                         <segments>
                                             <segment title="5 pts"/>
                                             <segment title="∞"/>
@@ -49,7 +49,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39Y-F4-KyJ">
-                                        <rect key="frame" x="8" y="238" width="359" height="86.5"/>
+                                        <rect key="frame" x="8" y="228" width="359" height="97"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
                                         <state key="normal" title="START!">
@@ -63,16 +63,32 @@
                                             <action selector="p1StartButtonSelected:" destination="LVB-YS-i5n" eventType="touchUpInside" id="lJk-KK-xy0"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="me8-8l-f3r">
+                                        <rect key="frame" x="267" y="26" width="100" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="ZZ6-rt-oKE"/>
+                                            <constraint firstAttribute="width" constant="100" id="u2y-pe-Mqa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Contact!">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="contactButtonTapped:" destination="LVB-YS-i5n" eventType="touchUpInside" id="oJo-wZ-Agc"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="me8-8l-f3r" firstAttribute="centerY" secondItem="pbo-3p-cUb" secondAttribute="centerY" constant="3.5" id="1Tw-H8-rYH"/>
                                     <constraint firstItem="pbo-3p-cUb" firstAttribute="top" secondItem="4JB-kC-zj0" secondAttribute="top" constant="8" id="23j-rK-N59"/>
                                     <constraint firstItem="39Y-F4-KyJ" firstAttribute="leading" secondItem="4JB-kC-zj0" secondAttribute="leading" constant="8" id="54J-gG-h1f"/>
-                                    <constraint firstAttribute="centerX" secondItem="pbo-3p-cUb" secondAttribute="centerX" id="6Qd-Co-8B5"/>
                                     <constraint firstAttribute="bottom" secondItem="39Y-F4-KyJ" secondAttribute="bottom" constant="8" id="BgS-PX-t6k"/>
                                     <constraint firstItem="39Y-F4-KyJ" firstAttribute="top" secondItem="aS6-Nc-ruC" secondAttribute="bottom" constant="40" id="CGN-TU-AIN"/>
                                     <constraint firstAttribute="trailing" secondItem="39Y-F4-KyJ" secondAttribute="trailing" constant="8" id="DUC-9W-5I0"/>
+                                    <constraint firstAttribute="trailing" secondItem="me8-8l-f3r" secondAttribute="trailing" constant="8" id="F4F-70-p1s"/>
                                     <constraint firstItem="Vjd-tV-9rn" firstAttribute="top" secondItem="pbo-3p-cUb" secondAttribute="bottom" constant="8" id="JId-OU-emz"/>
+                                    <constraint firstItem="pbo-3p-cUb" firstAttribute="leading" secondItem="4JB-kC-zj0" secondAttribute="leading" constant="8" id="K2u-WK-8KE"/>
                                     <constraint firstItem="aS6-Nc-ruC" firstAttribute="height" secondItem="39Y-F4-KyJ" secondAttribute="height" multiplier="0.5" id="Kfh-z9-SZQ"/>
                                     <constraint firstItem="aS6-Nc-ruC" firstAttribute="top" secondItem="Vjd-tV-9rn" secondAttribute="bottom" constant="8" id="LZR-bV-9Bs"/>
                                     <constraint firstAttribute="trailing" secondItem="Vjd-tV-9rn" secondAttribute="trailing" constant="8" id="Zdn-9n-2fg"/>
@@ -85,14 +101,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YkH-Ys-TGM">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="333"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY FOR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssE-8M-aee">
-                                        <rect key="frame" x="33" y="237" width="308.5" height="87.5"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="64"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLAY FOR" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssE-8M-aee">
+                                        <rect key="frame" x="135" y="259" width="231.5" height="66"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="48"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ymf-SI-sWV">
-                                        <rect key="frame" x="8" y="186" width="359" height="44"/>
+                                        <rect key="frame" x="8" y="203" width="359" height="49.5"/>
                                         <segments>
                                             <segment title="2 mins"/>
                                             <segment title="∞"/>
@@ -103,7 +119,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tBa-5f-pRL">
-                                        <rect key="frame" x="8" y="134.5" width="359" height="44"/>
+                                        <rect key="frame" x="8" y="146" width="359" height="49.5"/>
                                         <segments>
                                             <segment title="5 pts"/>
                                             <segment title="∞"/>
@@ -114,7 +130,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SbE-Ff-E96">
-                                        <rect key="frame" x="8" y="8" width="359" height="86.5"/>
+                                        <rect key="frame" x="8" y="8" width="359" height="98"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
                                         <state key="normal" title="START!">
@@ -137,9 +153,9 @@
                                     <constraint firstItem="SbE-Ff-E96" firstAttribute="leading" secondItem="YkH-Ys-TGM" secondAttribute="leading" constant="8" id="JDv-vW-l0V"/>
                                     <constraint firstAttribute="trailing" secondItem="ymf-SI-sWV" secondAttribute="trailing" constant="8" id="TQd-HK-Lw5"/>
                                     <constraint firstItem="tBa-5f-pRL" firstAttribute="top" secondItem="SbE-Ff-E96" secondAttribute="bottom" constant="40" id="f8r-D2-kJT"/>
-                                    <constraint firstAttribute="centerX" secondItem="ssE-8M-aee" secondAttribute="centerX" id="fel-J0-kc6"/>
                                     <constraint firstItem="tBa-5f-pRL" firstAttribute="height" secondItem="SbE-Ff-E96" secondAttribute="height" multiplier="0.5" id="ftR-fe-t2j"/>
                                     <constraint firstAttribute="trailing" secondItem="tBa-5f-pRL" secondAttribute="trailing" constant="8" id="hDW-mC-Q01"/>
+                                    <constraint firstAttribute="trailing" secondItem="ssE-8M-aee" secondAttribute="trailing" constant="8" id="isK-YV-WdO"/>
                                     <constraint firstAttribute="trailing" secondItem="SbE-Ff-E96" secondAttribute="trailing" constant="8" id="jmD-qc-Uhb"/>
                                     <constraint firstItem="tBa-5f-pRL" firstAttribute="height" secondItem="ymf-SI-sWV" secondAttribute="height" id="liN-fT-ILc"/>
                                     <constraint firstAttribute="bottom" secondItem="ssE-8M-aee" secondAttribute="bottom" constant="8" id="ocu-N1-UQn"/>

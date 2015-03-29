@@ -1,6 +1,7 @@
 #import "MenuViewController.h"
 #import "UIImage+ColorFromImage.h"
 #import "GameViewController.h"
+#import "Mailer.h"
 
 @implementation MenuViewController
 
@@ -77,6 +78,18 @@
 
 - (void)useSegmentValueFrom:(UISegmentedControl *)control1 forSegment:(UISegmentedControl *)control2 {
     [control2 setSelectedSegmentIndex:[control1 selectedSegmentIndex]];
+}
+
+- (IBAction)contactButtonTapped:(id)sender {
+    [self presentFeedbackEmail];
+}
+
+- (void)presentFeedbackEmail {
+    [[[Mailer alloc] initWithSender:self] presentFeedback];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (BOOL)prefersStatusBarHidden {
