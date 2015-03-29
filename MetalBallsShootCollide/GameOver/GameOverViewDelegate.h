@@ -4,4 +4,5 @@
 
 - (void) rematch;
 
+- (void)goHome;
 @end

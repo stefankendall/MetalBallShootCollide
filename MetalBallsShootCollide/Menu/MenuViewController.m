@@ -25,6 +25,12 @@
     [self.p2StartButton.layer setAffineTransform:CGAffineTransformMakeScale(-1, -1)];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.p1StartButton setSelected:NO];
+    [self.p2StartButton setSelected:NO];
+}
+
 - (IBAction)p1StartButtonSelected:(id)sender {
     [self.p1StartButton setSelected:!self.p1StartButton.selected];
     [self checkForStart];

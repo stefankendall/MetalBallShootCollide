@@ -10,6 +10,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *p1RematchButton;
 @property (weak, nonatomic) IBOutlet UIButton *p2RematchButton;
 @property (weak, nonatomic) NSObject<GameOverViewDelegate> *delegate;
+@property (weak, nonatomic) IBOutlet UIButton *p1HomeButton;
+@property (weak, nonatomic) IBOutlet UIButton *p2HomeButton;
 
 @property(nonatomic) enum Player winner;
 @end

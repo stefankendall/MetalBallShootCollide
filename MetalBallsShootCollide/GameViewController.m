@@ -55,5 +55,9 @@
     [self.scene startGame];
 }
 
+- (void)goHome {
+    [self.navigationController popViewControllerAnimated:NO];
+}
+
 
 @end

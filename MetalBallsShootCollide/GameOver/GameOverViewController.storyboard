@@ -41,6 +41,7 @@
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" title="READY!"/>
                                 <connections>
                                     <action selector="p1RematchTapped:" destination="k8p-OK-iYM" eventType="touchUpInside" id="wjW-52-eN7"/>
                                 </connections>
@@ -53,8 +54,41 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="selected" title="READY!"/>
                                 <connections>
                                     <action selector="p2RematchTapped:" destination="k8p-OK-iYM" eventType="touchUpInside" id="O88-kj-xmA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfS-qr-viC">
+                                <rect key="frame" x="0.0" y="480" width="320" height="88"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="x4b-b4-SVz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
+                                <state key="normal" title="HOME">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="LET'S GO HOME"/>
+                                <connections>
+                                    <action selector="p1HomeTapped:" destination="k8p-OK-iYM" eventType="touchUpInside" id="TDf-nM-FTM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="our-is-Nvn">
+                                <rect key="frame" x="0.0" y="20" width="320" height="88"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="r0C-Zc-Tm0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
+                                <state key="normal" title="HOME">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="LET'S GO HOME"/>
+                                <connections>
+                                    <action selector="p2HomeTapped:" destination="k8p-OK-iYM" eventType="touchUpInside" id="fwv-AQ-kPl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -62,14 +96,20 @@
                         <constraints>
                             <constraint firstItem="3br-7h-TdX" firstAttribute="height" secondItem="yek-8S-Oky" secondAttribute="height" id="23F-Hm-3xG"/>
                             <constraint firstAttribute="trailing" secondItem="3br-7h-TdX" secondAttribute="trailing" id="4Py-up-FVL"/>
+                            <constraint firstItem="FfS-qr-viC" firstAttribute="leading" secondItem="F94-5f-DGE" secondAttribute="leading" id="CmB-r7-k4r"/>
                             <constraint firstAttribute="trailing" secondItem="8EL-mN-rdU" secondAttribute="trailing" id="I9a-xr-YUb"/>
                             <constraint firstAttribute="trailing" secondItem="yek-8S-Oky" secondAttribute="trailing" id="MpC-Mp-TE7"/>
                             <constraint firstAttribute="trailing" secondItem="iDN-sI-mb6" secondAttribute="trailing" id="N7v-ox-G9D"/>
                             <constraint firstItem="8EL-mN-rdU" firstAttribute="height" secondItem="iDN-sI-mb6" secondAttribute="height" id="O2r-89-1kG"/>
                             <constraint firstItem="8EL-mN-rdU" firstAttribute="top" secondItem="iDN-sI-mb6" secondAttribute="bottom" id="QFz-0x-9hj"/>
+                            <constraint firstItem="4de-tW-oRS" firstAttribute="top" secondItem="FfS-qr-viC" secondAttribute="bottom" id="QKf-bd-CDv"/>
                             <constraint firstItem="3br-7h-TdX" firstAttribute="top" secondItem="iDN-sI-mb6" secondAttribute="bottom" constant="1" id="Xr7-Mh-HFt"/>
+                            <constraint firstItem="our-is-Nvn" firstAttribute="leading" secondItem="F94-5f-DGE" secondAttribute="leading" id="cD0-Fl-80h"/>
+                            <constraint firstAttribute="trailing" secondItem="our-is-Nvn" secondAttribute="trailing" id="cIf-uY-3RP"/>
                             <constraint firstItem="3br-7h-TdX" firstAttribute="leading" secondItem="F94-5f-DGE" secondAttribute="leading" id="luW-bc-ZDV"/>
+                            <constraint firstAttribute="trailing" secondItem="FfS-qr-viC" secondAttribute="trailing" id="nAl-7H-LZd"/>
                             <constraint firstItem="yek-8S-Oky" firstAttribute="leading" secondItem="F94-5f-DGE" secondAttribute="leading" id="oIG-aO-bGw"/>
+                            <constraint firstItem="our-is-Nvn" firstAttribute="top" secondItem="DDR-IZ-cNn" secondAttribute="bottom" id="p9p-ny-3h3"/>
                             <constraint firstItem="iDN-sI-mb6" firstAttribute="top" secondItem="DDR-IZ-cNn" secondAttribute="bottom" id="qaK-pP-Ot6"/>
                             <constraint firstItem="8EL-mN-rdU" firstAttribute="leading" secondItem="F94-5f-DGE" secondAttribute="leading" id="s3N-GJ-q0H"/>
                             <constraint firstItem="4de-tW-oRS" firstAttribute="top" secondItem="8EL-mN-rdU" secondAttribute="bottom" id="tGA-Cj-BaO"/>
@@ -79,8 +119,10 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="p1HomeButton" destination="FfS-qr-viC" id="gL5-j1-vFs"/>
                         <outlet property="p1Label" destination="8EL-mN-rdU" id="FxJ-En-BvV"/>
                         <outlet property="p1RematchButton" destination="3br-7h-TdX" id="7Nr-t4-jv4"/>
+                        <outlet property="p2HomeButton" destination="our-is-Nvn" id="sNo-FC-hNJ"/>
                         <outlet property="p2Label" destination="iDN-sI-mb6" id="Jrl-rr-F4k"/>
                         <outlet property="p2RematchButton" destination="yek-8S-Oky" id="rXn-xd-RZd"/>
                     </connections>
