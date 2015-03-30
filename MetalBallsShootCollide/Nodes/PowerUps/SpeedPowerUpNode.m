@@ -14,13 +14,9 @@
     [circle setFillColor:[UIColor yellowColor]];
     [node addChild:circle];
 
-    SKLabelNode *text = [SKLabelNode labelNodeWithFontNamed:@"Avenir-Next"];
-    [text setFontSize:36];
-    [text setFontColor:[UIColor blackColor]];
-    [text setText:@"S"];
-    [text setVerticalAlignmentMode:SKLabelVerticalAlignmentModeCenter];
-    [text setHorizontalAlignmentMode:SKLabelHorizontalAlignmentModeCenter];
-    [circle addChild:text];
+    SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"1093-lightning-bolt-2"];
+    [sprite setScale:2];
+    [circle addChild:sprite];
 
     node.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:circleRadius];
     node.physicsBody.angularDamping = 0;
