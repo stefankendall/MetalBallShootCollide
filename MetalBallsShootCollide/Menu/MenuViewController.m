@@ -53,7 +53,7 @@
 
 - (void)checkForStart {
     if ([self.p1StartButton isSelected] && [self.p2StartButton isSelected]) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1000), dispatch_get_main_queue(), ^{
             GameViewController *controller = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
             controller.pointsToWin = [self.p1PointsSegment selectedSegmentIndex] == 0 ? @5 : nil;
             controller.timeLimitMinutes = [self.p1PointsSegment selectedSegmentIndex] == 0 ? @2 : nil;
