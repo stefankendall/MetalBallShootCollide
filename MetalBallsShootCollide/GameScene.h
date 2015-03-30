@@ -1,4 +1,5 @@
 #import <SpriteKit/SpriteKit.h>
+#import "PowerUps.h"
 
 @class GameViewController;
 @protocol GameOverDelegate;
@@ -21,6 +22,14 @@
 @property(nonatomic, strong) NSNumber *pointsToWin;
 
 @property(nonatomic) BOOL nextPointWins;
+
+@property(nonatomic) enum PowerUp player1PowerUps;
+
+@property(nonatomic) enum PowerUp player2PowerUps;
+
+@property(nonatomic) CGVector p1ShootVector;
+
+@property(nonatomic) CGVector p2ShootVector;
 
 - (void)startGame;
 @end

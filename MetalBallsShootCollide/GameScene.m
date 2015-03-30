@@ -9,6 +9,8 @@
 #import "RulesNode.h"
 #import "TimerNode.h"
 #import "NextPointWins.h"
+#import "PowerupTextNode.h"
+#import "SpeedPowerUpNode.h"
 
 @implementation GameScene
 
@@ -21,7 +23,6 @@
     self.physicsWorld.contactDelegate = self;
 
     self.targetExplodeHeightFromEdge = 60;
-
     [self startGame];
 }
 
@@ -29,6 +30,9 @@
     self.gameOver = NO;
     [self removeAllChildren];
     [self removeAllActions];
+
+    self.player1PowerUps = PowerUpNone;
+    self.player2PowerUps = PowerUpNone;
 
     SKNode *level = [LevelBackgroundNode levelForScene:self];
     level.name = @"level";
@@ -83,6 +87,7 @@
 
     [level addChild:[RulesNode rulesIn:self player:Player1]];
     [level addChild:[RulesNode rulesIn:self player:Player2]];
+    [level addChild:[SpeedPowerUpNode powerUpInScene:self]];
 }
 
 - (void)timeLimitReached {
@@ -135,33 +140,42 @@
         return;
     }
 
-    LevelBackgroundNode *level = (LevelBackgroundNode *) [self childNodeWithName:@"level"];
     for (UITouch *touch in touches) {
         CGPoint point = [touch locationInNode:self];
-        ShooterNode *shooter;
-
         if (point.y < self.size.height / 2) {
-            if (([NSDate timeIntervalSinceReferenceDate] - self.lastShotTimeShooter1) > self.shootInterval) {
-                shooter = (ShooterNode *) [self childNodeWithName:@"//shooter1"];
-                self.lastShotTimeShooter1 = [NSDate timeIntervalSinceReferenceDate];
-                BallNode *ball = [BallNode ballFromPlayer:Player1];
-                [level addChild:ball];
-                [shooter shootBall:ball withVector:[self vectorTo:shooter from:touch]];
-            }
+            [self shootFrom:Player1];
         }
         else {
-            shooter = (ShooterNode *) [self childNodeWithName:@"//shooter2"];
-            if (([NSDate timeIntervalSinceReferenceDate] - self.lastShotTimeShooter2) > self.shootInterval) {
-                self.lastShotTimeShooter2 = [NSDate timeIntervalSinceReferenceDate];
-                BallNode *ball = [BallNode ballFromPlayer:Player2];
-                [level addChild:ball];
-                [shooter shootBall:ball withVector:[self vectorTo:shooter from:touch]];
-            }
+            [self shootFrom:Player2];
         }
-
-        CGVector vectorToShooter = [self vectorTo:shooter from:touch];
-        shooter.zRotation = (CGFloat) (atan2(vectorToShooter.dy, vectorToShooter.dx) - M_PI_2);
     }
+}
+
+- (void)shootFrom:(enum Player)player {
+    ShooterNode *shooter = (ShooterNode *) [self childNodeWithName:[NSString stringWithFormat:@"//shooter%d",
+                                                                                              player == Player1 ? 1 : 2]];
+
+    LevelBackgroundNode *level = (LevelBackgroundNode *) [self childNodeWithName:@"level"];
+    CGVector vectorToShooter = player == Player1 ? self.p1ShootVector : self.p2ShootVector;
+
+    BOOL shouldShoot = NO;
+    if (player == Player1 && ([NSDate timeIntervalSinceReferenceDate] - self.lastShotTimeShooter1) > self.shootInterval) {
+        self.lastShotTimeShooter1 = [NSDate timeIntervalSinceReferenceDate];
+        shouldShoot = YES;
+    }
+
+    if (player == Player2 && ([NSDate timeIntervalSinceReferenceDate] - self.lastShotTimeShooter2) > self.shootInterval) {
+        self.lastShotTimeShooter2 = [NSDate timeIntervalSinceReferenceDate];
+        shouldShoot = YES;
+    }
+
+    if (shouldShoot) {
+        BallNode *ball = [BallNode ballFromPlayer:player];
+        [level addChild:ball];
+        [shooter shootBall:ball withVector:vectorToShooter];
+    }
+
+    shooter.zRotation = (CGFloat) (atan2(vectorToShooter.dy, vectorToShooter.dx) - M_PI_2);
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -173,14 +187,18 @@
         CGPoint point = [touch locationInNode:self];
         ShooterNode *shooter;
 
+        CGVector vectorToShooter;
         if (point.y < self.size.height / 2) {
             shooter = (ShooterNode *) [self childNodeWithName:@"//shooter1"];
+            vectorToShooter = [self vectorTo:shooter from:touch];
+            self.p1ShootVector = vectorToShooter;
         }
         else {
             shooter = (ShooterNode *) [self childNodeWithName:@"//shooter2"];
+            vectorToShooter = [self vectorTo:shooter from:touch];
+            self.p2ShootVector = vectorToShooter;
         }
 
-        CGVector vectorToShooter = [self vectorTo:shooter from:touch];
         shooter.zRotation = (CGFloat) (atan2(vectorToShooter.dy, vectorToShooter.dx) - M_PI_2);
     }
 }
@@ -194,36 +212,60 @@
 
 - (void)update:(CFTimeInterval)currentTime {
     [self enumerateChildNodesWithName:@"//target" usingBlock:^(SKNode *node, BOOL *stop) {
-        TriangleTargetNode *target = (TriangleTargetNode *) node;
-        if (target.position.y < self.targetExplodeHeightFromEdge ||
-                target.position.y > self.size.height - self.targetExplodeHeightFromEdge
-                ) {
-            if (!target.exploding) {
-                [target explode];
+        [self handleTargetState:node];
+    }];
 
-                ScoreNode *playerScore = nil;
-                if (target.position.y < self.targetExplodeHeightFromEdge) {
-                    playerScore = (ScoreNode *) [self childNodeWithName:@"//score2"];
-                }
-                else {
-                    playerScore = (ScoreNode *) [self childNodeWithName:@"//score1"];
-                }
-
-                [playerScore setScore:playerScore.score + target.value];
-
-                if ((self.pointsToWin && playerScore.score >= [self.pointsToWin intValue]) || self.nextPointWins) {
-                    self.gameOver = YES;
-                    [self.gameOverDelegate gameOverByVictory:playerScore.player];
-                    return;
-                }
-
-                [self runAction:[SKAction sequence:@[
-                        [SKAction waitForDuration:self.targetRespawnTimeInSeconds],
-                        [SKAction performSelector:@selector(respawnTriangle) onTarget:self]
-                ]]];
-            }
+    [self enumerateChildNodesWithName:@"//powerupText" usingBlock:^(SKNode *node, BOOL *stop) {
+        PowerupTextNode *textNode = (PowerupTextNode *) node;
+        if (textNode.player == Player1 && self.player1PowerUps == PowerUpNone) {
+            [textNode removeFromParent];
+        }
+        if (textNode.player == Player2 && self.player2PowerUps == PowerUpNone) {
+            [textNode removeFromParent];
         }
     }];
+
+    if (!self.gameOver) {
+        if (self.player1PowerUps == PowerUpSpeed) {
+            [self shootFrom:Player1];
+        }
+
+        if (self.player2PowerUps == PowerUpSpeed) {
+            [self shootFrom:Player2];
+        }
+    }
+}
+
+- (void)handleTargetState:(SKNode *)node {
+    TriangleTargetNode *target = (TriangleTargetNode *) node;
+    if (target.position.y < self.targetExplodeHeightFromEdge ||
+            target.position.y > self.size.height - self.targetExplodeHeightFromEdge
+            ) {
+        if (!target.exploding) {
+            [target explode];
+
+            ScoreNode *playerScore = nil;
+            if (target.position.y < self.targetExplodeHeightFromEdge) {
+                playerScore = (ScoreNode *) [self childNodeWithName:@"//score2"];
+            }
+            else {
+                playerScore = (ScoreNode *) [self childNodeWithName:@"//score1"];
+            }
+
+            [playerScore setScore:playerScore.score + target.value];
+
+            if ((self.pointsToWin && playerScore.score >= [self.pointsToWin intValue]) || self.nextPointWins) {
+                self.gameOver = YES;
+                [self.gameOverDelegate gameOverByVictory:playerScore.player];
+                return;
+            }
+
+            [self runAction:[SKAction sequence:@[
+                    [SKAction waitForDuration:self.targetRespawnTimeInSeconds],
+                    [SKAction performSelector:@selector(respawnTriangle) onTarget:self]
+            ]]];
+        }
+    }
 }
 
 - (void)respawnTriangle {
@@ -236,6 +278,49 @@
         SKPhysicsBody *target = contact.bodyB;
         [target applyImpulse:CGVectorMake(1500 * contact.contactNormal.dx, 0)];
     }
+
+    if (contact.bodyA.categoryBitMask == CategoryBall) {
+        [self ballBody:contact.bodyA didContact:contact withBody:contact.bodyB];
+    } else if (contact.bodyB.categoryBitMask == CategoryBall) {
+        [self ballBody:contact.bodyB didContact:contact withBody:contact.bodyA];
+    }
+}
+
+- (void)ballBody:(SKPhysicsBody *)ballBody
+      didContact:(SKPhysicsContact *)contact
+        withBody:(SKPhysicsBody *)otherBody {
+    if (otherBody.categoryBitMask == CategoryPowerUp) {
+        BallNode *ball = (BallNode *) ballBody.node;
+        PowerUpNode *powerUpNode = (PowerUpNode *) otherBody.node;
+        if (powerUpNode.solid) {
+            if (ball.player == Player1) {
+                self.player1PowerUps = powerUpNode.powerUpValue;
+            }
+            else {
+                self.player2PowerUps = powerUpNode.powerUpValue;
+            }
+            [self removePowerUpTextForPlayer:ball.player];
+            [self addPowerUpTextForPlayer:ball.player text:powerUpNode.powerUpText];
+            [powerUpNode removeFromParent];
+        }
+    }
+}
+
+- (void)addPowerUpTextForPlayer:(enum Player)player text:(NSString *)text {
+    LevelBackgroundNode *level = (LevelBackgroundNode *) [self childNodeWithName:@"level"];
+    PowerupTextNode *powerupTextNode = (PowerupTextNode *)
+            [PowerupTextNode textIn:self player:player text:text];
+    powerupTextNode.name = @"powerupText";
+    [level addChild:powerupTextNode];
+}
+
+- (void)removePowerUpTextForPlayer:(enum Player)player {
+    [self enumerateChildNodesWithName:@"//powerupText" usingBlock:^(SKNode *node, BOOL *stop) {
+        PowerupTextNode *textNode = (PowerupTextNode *) node;
+        if (textNode.player == player) {
+            [textNode removeFromParent];
+        }
+    }];
 }
 
 @end
