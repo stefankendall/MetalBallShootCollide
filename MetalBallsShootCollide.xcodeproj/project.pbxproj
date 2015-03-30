@@ -23,6 +23,7 @@
 		545903EBEE232CBF7F940026 /* ShooterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459002BB5A5230D20F08BF0 /* ShooterNode.m */; };
 		5459040BA600B8DAC2852253 /* PowerUpNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590A68ED9143D5A0BB640B /* PowerUpNode.m */; };
 		5459046243BD158CFF80DB23 /* siren.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5459062ED4857F2A680C2F1C /* siren.mp3 */; };
+		5459049E1FE1ABC5D5F9FEEE /* short_beep.caf in Resources */ = {isa = PBXBuildFile; fileRef = 54590D63252B5293327336E5 /* short_beep.caf */; };
 		545905EE0DFE242F64FBD20B /* GameOverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54590C72144DBC939A26BB38 /* GameOverViewController.storyboard */; };
 		54590600CACC3ECFFD231713 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54590C46E6024176FA0CA422 /* LaunchScreen.xib */; };
 		545906D1A741D5B907EE07C6 /* LevelBackgroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590B2965ABEE3A0CE4AD93 /* LevelBackgroundNode.m */; };
@@ -33,7 +34,6 @@
 		545907EE8F49C6DCA20B0C75 /* Mailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 545908256B8AD0FDBA90CF0D /* Mailer.m */; };
 		54590809083DF4FD8D54204B /* menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 545903EBA0CE40383E4AE60F /* menu.mp3 */; };
 		54590864C036B2CCC9E6842C /* SKEmitterNode+HelperExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CF692AF5D8B87524D82 /* SKEmitterNode+HelperExtensions.m */; };
-		5459089DA0738AC1F2A2793A /* short_beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54590D4E0B28031FFAAC4DB8 /* short_beep.mp3 */; };
 		545908AE25086F5D9D9E32E6 /* TriangleTargetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */; };
 		54590920CBFA05A2969A41AC /* p1ball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545909C6235944D3B1D9C380 /* p1ball@2x.png */; };
 		54590969525EAC0566AE97B7 /* RulesNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590222E262F86D61157375 /* RulesNode.m */; };
@@ -128,7 +128,7 @@
 		54590CF692AF5D8B87524D82 /* SKEmitterNode+HelperExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+HelperExtensions.m"; sourceTree = "<group>"; };
 		54590D27DA64855650F0718C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		54590D424FB42B32DBE47398 /* MetalBallsShootCollideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetalBallsShootCollideTests.m; sourceTree = "<group>"; };
-		54590D4E0B28031FFAAC4DB8 /* short_beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_beep.mp3; sourceTree = "<group>"; };
+		54590D63252B5293327336E5 /* short_beep.caf */ = {isa = PBXFileReference; lastKnownFileType = file.caf; path = short_beep.caf; sourceTree = "<group>"; };
 		54590DB0B0F0A8E00DCDEE8B /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		54590E0DBA265572974476F6 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		54590E9C9395D39E25FF7C6F /* Mailer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mailer.h; sourceTree = "<group>"; };
@@ -329,11 +329,11 @@
 			isa = PBXGroup;
 			children = (
 				5459034F753FD70D04EB4303 /* short_explosion.mp3 */,
-				54590D4E0B28031FFAAC4DB8 /* short_beep.mp3 */,
 				54590B3A1382A983776A1300 /* go.mp3 */,
 				54590FB336F98440BDFFCFCD /* shoot.wav */,
 				5459062ED4857F2A680C2F1C /* siren.mp3 */,
 				545903EBA0CE40383E4AE60F /* menu.mp3 */,
+				54590D63252B5293327336E5 /* short_beep.caf */,
 			);
 			path = sounds;
 			sourceTree = "<group>";
@@ -430,7 +430,6 @@
 				54590920CBFA05A2969A41AC /* p1ball@2x.png in Resources */,
 				54590E3B540C7F86D0DA34BF /* ContactCategoryMask.h in Resources */,
 				54590B5DF8093553E091AA1E /* short_explosion.mp3 in Resources */,
-				5459089DA0738AC1F2A2793A /* short_beep.mp3 in Resources */,
 				54590D9F619270CC45B0604C /* go.mp3 in Resources */,
 				54590CC9F8EB35B81419537D /* shoot.wav in Resources */,
 				545905EE0DFE242F64FBD20B /* GameOverViewController.storyboard in Resources */,
@@ -439,6 +438,7 @@
 				545901CD73F5FB317E04DD2D /* 1093-lightning-bolt-2@2x.png in Resources */,
 				54590E453DC0707B353520A9 /* cannon.png in Resources */,
 				54590809083DF4FD8D54204B /* menu.mp3 in Resources */,
+				5459049E1FE1ABC5D5F9FEEE /* short_beep.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

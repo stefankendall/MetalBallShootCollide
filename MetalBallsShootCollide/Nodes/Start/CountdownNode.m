@@ -34,7 +34,7 @@
     SKAction *fade = [SKAction fadeAlphaTo:0.8 duration:1];
     SKAction *shrinkAndFade = [SKAction group:@[shrink, fade]];
 
-    SKAction *shortBeep = [SKAction playSoundFileNamed:@"short_beep.mp3" waitForCompletion:NO];
+    SKAction *shortBeep = [SKAction playSoundFileNamed:@"short_beep.caf" waitForCompletion:YES];
     SKAction *goSound = [SKAction playSoundFileNamed:@"go.mp3" waitForCompletion:NO];
 
     SKAction *hide = [SKAction fadeAlphaTo:0 duration:0];
@@ -46,10 +46,13 @@
 
     [self setTextNodeText:@"3"];
     [self runAction:
-            [SKAction sequence:
-                    @[[SKAction group:@[shrinkAndFade, shortBeep]], hide, resetSize, [self actionSetText:@"2"], show,
-                            [SKAction group:@[shrinkAndFade, shortBeep]], hide, resetSize, [self actionSetText:@"1"], show,
-                            [SKAction group:@[shrinkAndFade, shortBeep]], [SKAction runBlock:callback], goSound, remove]]];
+            [SKAction group:@[
+                    [SKAction sequence:@[shortBeep, shortBeep, shortBeep]],
+                    [SKAction sequence:
+                            @[shrinkAndFade, hide, resetSize, [self actionSetText:@"2"], show,
+                                    shrinkAndFade, hide, resetSize, [self actionSetText:@"1"], show,
+                                    shrinkAndFade, [SKAction runBlock:callback], goSound, remove]]
+            ]]];
 }
 
 - (SKAction *)actionSetText:(NSString *)text {
