@@ -17,6 +17,10 @@
 - (void)didMoveToView:(SKView *)view {
     self.backgroundColor = [UIColor whiteColor];
     self.shootInterval = 0.15;
+    self.powerupLengthSeconds = 5;
+    self.powerupRespawnMinTimeSeconds = 10;
+    self.powerupRespawnVarianceSeconds = 7;
+
     self.targetRespawnTimeInSeconds = 1;
 
     self.physicsWorld.gravity = CGVectorMake(0, 0);
@@ -87,7 +91,25 @@
 
     [level addChild:[RulesNode rulesIn:self player:Player1]];
     [level addChild:[RulesNode rulesIn:self player:Player2]];
-    [level addChild:[SpeedPowerUpNode powerUpInScene:self]];
+
+    [self schedulePowerUp];
+}
+
+- (void)schedulePowerUp {
+    if (self.gameOver) {
+        return;
+    }
+    [self runAction:[SKAction sequence:@[
+            [SKAction waitForDuration:(self.powerupRespawnMinTimeSeconds +
+                    arc4random_uniform((u_int32_t) self.powerupRespawnMinTimeSeconds))],
+            [SKAction runBlock:^{
+                [self addPowerUp];
+            }]
+    ]]];
+}
+
+- (void)addPowerUp {
+    [[self childNodeWithName:@"level"] addChild:[SpeedPowerUpNode powerUpInScene:self]];
 }
 
 - (void)timeLimitReached {
@@ -299,9 +321,21 @@
             else {
                 self.player2PowerUps = powerUpNode.powerUpValue;
             }
-            [self removePowerUpTextForPlayer:ball.player];
             [self addPowerUpTextForPlayer:ball.player text:powerUpNode.powerUpText];
             [powerUpNode removeFromParent];
+            [self runAction:[SKAction sequence:@[
+                    [SKAction waitForDuration:self.powerupLengthSeconds],
+                    [SKAction runBlock:^{
+                        if(ball.player == Player1){
+                            self.player1PowerUps = PowerUpNone;
+                        }
+                        if(ball.player == Player2){
+                            self.player2PowerUps = PowerUpNone;
+                        }
+                        [self removePowerUpTextForPlayer:ball.player];
+                        [self schedulePowerUp];
+                    }]
+            ]]];
         }
     }
 }

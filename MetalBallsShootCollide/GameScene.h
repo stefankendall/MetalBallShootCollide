@@ -31,5 +31,11 @@
 
 @property(nonatomic) CGVector p2ShootVector;
 
+@property(nonatomic) int powerupLengthSeconds;
+
+@property(nonatomic) int powerupRespawnVarianceSeconds;
+
+@property(nonatomic) int powerupRespawnMinTimeSeconds;
+
 - (void)startGame;
 @end

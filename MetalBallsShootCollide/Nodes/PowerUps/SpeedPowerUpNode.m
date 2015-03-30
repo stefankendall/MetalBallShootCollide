@@ -35,6 +35,10 @@
     return node;
 }
 
+- (NSString *)powerUpText {
+    return @"HOLD TO SHOOT!";
+}
+
 - (PowerUp)powerUpValue {
     return PowerUpSpeed;
 }

@@ -12,6 +12,11 @@
                     3 * scene.frame.size.height / 4);
     node.alpha = 0.35;
 
+    if( player == Player2){
+        [node setXScale:-1];
+        [node setYScale:-1];
+    }
+
     SKLabelNode *text = [SKLabelNode labelNodeWithFontNamed:@"Avenir-Next"];
     [text setText:rulesText];
     [text setFontColor:[UIColor blackColor]];
