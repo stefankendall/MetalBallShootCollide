@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface MenuViewController : UIViewController <MFMailComposeViewControllerDelegate> {}
 
@@ -13,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *p2StartButton;
 @property (weak, nonatomic) IBOutlet UILabel *p2TopLabel;
 
+@property(nonatomic, strong) AVAudioPlayer *audioPlayer;
 @end

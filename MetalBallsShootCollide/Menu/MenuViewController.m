@@ -29,6 +29,16 @@
     [super viewWillAppear:animated];
     [self.p1StartButton setSelected:NO];
     [self.p2StartButton setSelected:NO];
+
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"menu" withExtension:@"mp3"];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [self.audioPlayer play];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.audioPlayer stop];
+    self.audioPlayer = nil;
 }
 
 - (IBAction)p1StartButtonSelected:(id)sender {

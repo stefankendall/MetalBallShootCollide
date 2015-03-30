@@ -31,6 +31,7 @@
 		545907DA961EE31A8906FB61 /* TimerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590FCB986C1577A37789AD /* TimerNode.m */; };
 		545907E241E5F327E5D3EC7F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590E0DBA265572974476F6 /* MenuViewController.m */; };
 		545907EE8F49C6DCA20B0C75 /* Mailer.m in Sources */ = {isa = PBXBuildFile; fileRef = 545908256B8AD0FDBA90CF0D /* Mailer.m */; };
+		54590809083DF4FD8D54204B /* menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 545903EBA0CE40383E4AE60F /* menu.mp3 */; };
 		54590864C036B2CCC9E6842C /* SKEmitterNode+HelperExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590CF692AF5D8B87524D82 /* SKEmitterNode+HelperExtensions.m */; };
 		5459089DA0738AC1F2A2793A /* short_beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54590D4E0B28031FFAAC4DB8 /* short_beep.mp3 */; };
 		545908AE25086F5D9D9E32E6 /* TriangleTargetNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 545905FD47C04CB3E65194C1 /* TriangleTargetNode.m */; };
@@ -40,11 +41,13 @@
 		545909C5EF422308227E81FE /* CountdownNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459062EB163D910E5E24BD7 /* CountdownNode.m */; };
 		545909CE56F7C8365E7382B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 545900FF2046079DEC2A2638 /* main.m */; };
 		54590B5DF8093553E091AA1E /* short_explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5459034F753FD70D04EB4303 /* short_explosion.mp3 */; };
+		54590B9649290920F8947727 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545907233F376BDB27CA4979 /* CoreAudio.framework */; };
 		54590CC9F8EB35B81419537D /* shoot.wav in Resources */ = {isa = PBXBuildFile; fileRef = 54590FB336F98440BDFFCFCD /* shoot.wav */; };
 		54590D9F619270CC45B0604C /* go.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 54590B3A1382A983776A1300 /* go.mp3 */; };
 		54590E16A6B3776B333CFA43 /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 545907154B4352869016EE85 /* GameOverViewController.m */; };
 		54590E3293DC36BD6E90D32B /* SpeedPowerUpNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54590964E77808012B1E43A6 /* SpeedPowerUpNode.m */; };
 		54590E3B540C7F86D0DA34BF /* ContactCategoryMask.h in Resources */ = {isa = PBXBuildFile; fileRef = 54590B96FD61137335B7EB44 /* ContactCategoryMask.h */; };
+		54590E453DC0707B353520A9 /* cannon.png in Resources */ = {isa = PBXBuildFile; fileRef = 54590B5CFB8E5C371AAB0282 /* cannon.png */; };
 		54590E6FD2E3845E6662C950 /* p2ball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545904702C600889242FBD11 /* p2ball@2x.png */; };
 		54590F34A8B5BC7CF27656A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5459086CE021FBB9280019AC /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -78,6 +81,7 @@
 		5459034F753FD70D04EB4303 /* short_explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short_explosion.mp3; sourceTree = "<group>"; };
 		5459036A68F655B93CE50A57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		545903B399BD76D43986DBFA /* PowerupTextNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PowerupTextNode.m; sourceTree = "<group>"; };
+		545903EBA0CE40383E4AE60F /* menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = menu.mp3; sourceTree = "<group>"; };
 		5459045AA68F0B2C689BC05C /* GameOverViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewDelegate.h; sourceTree = "<group>"; };
 		545904702C600889242FBD11 /* p2ball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2ball@2x.png"; sourceTree = "<group>"; };
 		545904A7526DAB2BD3746A39 /* NextPointWins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextPointWins.m; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 		545906B99F6EE3ACF14C762A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5459070281355832564F94B6 /* TargetNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetNode.h; sourceTree = "<group>"; };
 		545907154B4352869016EE85 /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
+		545907233F376BDB27CA4979 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		5459074AA17E8C2570E5EBC5 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		545907615617A06DBBB791C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		545907EB9F391968CDE5C642 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
@@ -113,6 +118,7 @@
 		54590A8BB53CAA757691D84D /* PowerupTextNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PowerupTextNode.h; sourceTree = "<group>"; };
 		54590B2965ABEE3A0CE4AD93 /* LevelBackgroundNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelBackgroundNode.m; sourceTree = "<group>"; };
 		54590B3A1382A983776A1300 /* go.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = go.mp3; sourceTree = "<group>"; };
+		54590B5CFB8E5C371AAB0282 /* cannon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannon.png; sourceTree = "<group>"; };
 		54590B88914A599B0720055B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		54590B96FD61137335B7EB44 /* ContactCategoryMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCategoryMask.h; sourceTree = "<group>"; };
 		54590BF90A942B92F30D4BE8 /* TriangleTargetNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleTargetNode.h; sourceTree = "<group>"; };
@@ -136,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54590B9649290920F8947727 /* CoreAudio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +162,7 @@
 				54590C70C3E8FB3A11FF8BB7 /* Products */,
 				5459064DE1687B655C4399BE /* MetalBallsShootCollide */,
 				5459064981428EC132FF7B3E /* MetalBallsShootCollideTests */,
+				54590FD8645BA8A6D1EA3A20 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -292,6 +300,7 @@
 				545904702C600889242FBD11 /* p2ball@2x.png */,
 				545909C6235944D3B1D9C380 /* p1ball@2x.png */,
 				545905EB9EA553FB97090FC8 /* 1093-lightning-bolt-2@2x.png */,
+				54590B5CFB8E5C371AAB0282 /* cannon.png */,
 			);
 			path = icons.atlas;
 			sourceTree = "<group>";
@@ -324,8 +333,17 @@
 				54590B3A1382A983776A1300 /* go.mp3 */,
 				54590FB336F98440BDFFCFCD /* shoot.wav */,
 				5459062ED4857F2A680C2F1C /* siren.mp3 */,
+				545903EBA0CE40383E4AE60F /* menu.mp3 */,
 			);
 			path = sounds;
+			sourceTree = "<group>";
+		};
+		54590FD8645BA8A6D1EA3A20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				545907233F376BDB27CA4979 /* CoreAudio.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +437,8 @@
 				54590109BDFC78F06E187F4D /* MenuViewController.storyboard in Resources */,
 				5459046243BD158CFF80DB23 /* siren.mp3 in Resources */,
 				545901CD73F5FB317E04DD2D /* 1093-lightning-bolt-2@2x.png in Resources */,
+				54590E453DC0707B353520A9 /* cannon.png in Resources */,
+				54590809083DF4FD8D54204B /* menu.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
